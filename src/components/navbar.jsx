@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {Link} from 'react-router-dom'
 class Navbar extends Component {
   toggle() {
     const collapsibles = document.querySelectorAll(".collapsible");
@@ -24,13 +24,13 @@ class Navbar extends Component {
         </svg>
         <ul className="list nav__list collapsible__content">
           <li className="nav__item">
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className="nav__item">
             <a href="#">classroom</a>
           </li>
           <li className="nav__item">
-            <a href="#">Discussion Forum</a>
+           <Link to="/question">Discussion Forum</Link>
           </li>
           <li className="nav__item">
             <a href="#">Teachers</a>

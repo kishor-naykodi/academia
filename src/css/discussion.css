@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&display=swap");
+/* =====================first page with questions================ */
+.header_bar {
+  padding-top:10px;
+  height: 50px;
+  background-color: rgb(39, 41, 48);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  color: white;
+}
+.header_one {
+  padding-right: 15px;
+  padding-top: 10px;
+  font-family: "DM Sans", sans-serif;
+}
+.header_one:hover {
+  color: rgb(45, 111, 247);
+}
+.questions_container_background {
+  padding: 50px;
+}
+.queastions_container {
+  box-shadow: 10px 10px 8px #888888;
+  border-radius: 20px;
+  padding: 0px 20px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.name_container {
+  display: flex;
+  gap: 10px;
+}
+.sub_text {
+  display: flex;
+}
+.name {
+  color: rgb(45, 111, 247);
+  font-family: "DM Sans", sans-serif;
+}
+.queastion {
+  font-family: "DM Sans", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color:black;
+}
+.queastion:hover {
+  color: rgb(45, 111, 247);
+}
+
+.answer {
+  font-family: "DM Sans", sans-serif;
+  color: rgba(0, 0, 0, 0.521);
+}
+.tags_container {
+  padding-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+.tags {
+  border: 1px solid grey;
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+.tags:hover {
+  background-color: rgb(45, 111, 247);
+  color: white;
+}
+.asked,
+.in {
+  font-family: "DM Sans", sans-serif;
+  color: rgba(0, 0, 0, 0.493);
+}
+@media (max-width: 768px) {
+  .name_container {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tags {
+    width: fit-content;
+  }
+}
+/*=========================== subject container =====================*/
+.subjects {
+  flex-wrap: wrap;
+  gap: 20px;
+  display: flex;
+  padding: 50px;
+}
+.subject {
+  padding: 10px 20px;
+  flex-basis: 45%;
+  background-color: rgb(45, 111, 247);
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  border-radius: 5px;
+}
+.subject:hover {
+  background-color: rgb(39, 41, 48);
+}
+
+.subject_bar {
+  justify-content: flex-start;
+}
+.subject_bar_header {
+  margin: 0 50px;
+}
+/*=====================answer container======================== */
+.answer_Container_background {
+  padding: 50px 50px;
+}
+.detail_answer_container {
+  padding: 50px 50px;
+}
+.detail_answer_container {
+  display: flex;
+}
+.answer_detail {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+.answer_detail_header {
+  display: flex;
+  flex-direction: row;
+}
+.answer_sub_text {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  border: 1px solid;
+  width: fit-content;
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin: 10px;
+  text-align: center;
+  overflow-wrap: wrap;
+  background-color: rgb(45, 111, 247);
+  color: white;
+  font-size: 15px;
+  font-family: "DM Sans", sans-serif;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: black;
+}
+.show_all_ans_btn_background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.answer_Container_background {
+  font-family: "DM Sans", sans-serif;
+}
+.answer_user {
+  color: rgb(45, 111, 247);
+  font-size: 17px;
+}
+.answer_user:hover {
+  color: black;
+}
+/* ========================================================= */
+/* ============Form container====================== */
+.submit_answer_form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.form_answer_container {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.answer_box {
+  height: 100px;
+  width: 762px;
+  border-radius: 10px;
+}
+.answer_submit_container {
+  padding: 30px;
+  display: flex;
+  justify-content: flex-start;
+}
+.ans_submit_btn {
+  height: fit-content;
+  margin: 10px 0px;
+}
+.submit_answer_form {
+  padding: 10px;
+  border-radius: 10px;
+  width: 1000px;
+  border: 0.5px solid grey;
+  box-shadow: 1px 1px 15px grey;
+}
+.input {
+  border-radius: 10px;
+  height: 25px;
+  width: 300px;
+}
+@media (max-width: 992px) {
+  .answer_box {
+    width: 300px;
+  }
+  .answer_submit_container {
+    padding: 10px 0px;
+  }
+}
+/* ===================================================== */
