@@ -1,5 +1,5 @@
 
-import QueastionWithAllAns from "../components/queWithAllAns/queWithAllANs";
+import QueastionWithAllAns from "../components/Discussion/queWithAllAns/queWithAllANs";
 
 function QuestionWithAllAnswers(params) {
 
