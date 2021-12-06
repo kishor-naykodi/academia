@@ -1,15 +1,17 @@
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 function QuestionWithAns(params) {
-const que_id=3;
+  const que_id = 3;
 
-return(
+  return (
     <>
-    
-        <div class="header_bar subject_bar">
+      <div class="header_bar subject_bar">
         <div class="header_one subject_bar_header">Answers</div>
-        <div class="header_one"><Link to="/subjects">Subjects</Link></div>
-        <div class="header_one"><Link to="/popularquestion">Popular questions</Link></div>
-        
+        <div class="header_one">
+          <Link to="/subjects">Subjects</Link>
+        </div>
+        <div class="header_one">
+          <Link to="/popularquestion">Popular questions</Link>
+        </div>
       </div>
       <div class="answer_Container_background">
         <div class="queastions_container">
@@ -38,7 +40,7 @@ return(
             <div class="tags">English</div>
             <div class="tags">language</div>
           </div>
-          
+
           <div class="answer_container_background">
             <div class="detail_answer_container">
               <div class="answer_detail">
@@ -104,21 +106,24 @@ return(
               </div>
             </div>
           </div>
-          
+
           <div class="show_all_ans_btn_background">
             <div class="show_all_ans_btn btn">
-             <Link to={`/question/allans/${que_id}`}>Show all Answers</Link>
+              <Link to={`/question/allans/${que_id}`}>Show all Answers</Link>
             </div>
           </div>
-          
+
           <div class="answer_submit_container">
             <form
               action="#"
               method="post"
               id="submit_answer"
-              class="submit_answer_form">
+              class="submit_answer_form"
+            >
               <div class="form_answer_container">
-                <label class="form_input" for="answer">Leave your answer</label>
+                <label class="form_input" for="answer">
+                  Leave your answer
+                </label>
                 <input class="answer_box" type="text" name="answer" />
               </div>
               <div class="form_answer_container">
@@ -151,7 +156,6 @@ return(
         </div>
       </div>
     </>
-)
-
+  );
 }
 export default QuestionWithAns;

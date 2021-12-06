@@ -1,14 +1,15 @@
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 function QueastionWithAllAns(params) {
-
-    return(
-        <>
-        <div class="header_bar subject_bar">
+  return (
+    <>
+      <div class="header_bar subject_bar">
         <div class="header_one subject_bar_header">All Answers</div>
-        <div class="header_one"><Link to="/subjects">Subjects</Link></div>
-        <div class="header_one"><Link to="/popularquestion">Popular questions</Link></div>
-        
-       
+        <div class="header_one">
+          <Link to="/subjects">Subjects</Link>
+        </div>
+        <div class="header_one">
+          <Link to="/popularquestion">Popular questions</Link>
+        </div>
       </div>
       <div class="answer_Container_background">
         <div class="queastions_container">
@@ -259,8 +260,7 @@ function QueastionWithAllAns(params) {
           </div>
         </div>
       </div>
-      </>
-    )
-    
+    </>
+  );
 }
-export default QueastionWithAllAns
+export default QueastionWithAllAns;

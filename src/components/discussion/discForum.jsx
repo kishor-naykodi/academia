@@ -1,14 +1,19 @@
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
+import "../../css/discussion.css";
+
 function Question(params) {
-   const id=1;
-    return(
-        <>
-        <div class="header_bar">
-        <div class="header_one"><Link to="/subjects">Subjects</Link></div>
-        <div class="header_one"><Link to="/popularquestion">Popular questions</Link></div>
-        
-       </div>
-      
+  const id = 1;
+  return (
+    <>
+      <div class="header_bar">
+        <div class="header_one">
+          <Link to="/subjects">Subjects</Link>
+        </div>
+        <div class="header_one">
+          <Link to="/popularquestion">Popular questions</Link>
+        </div>
+      </div>
+
       <div class="questions_container_background">
         <div class="queastions_container">
           <div class="name_container">
@@ -25,12 +30,13 @@ function Question(params) {
             </div>
           </div>
           <div class="queastion_container">
-            <Link to={`/question/${id}`}><div class="queastion">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum
-              velit architecto dolor voluptatum ullam quaerat reiciendis
-              provident, blanditiis ipsa possimus, est perspiciatis! Veniam illo
-              sequi incidunt est, non rerum eius.
-            </div>
+            <Link to={`/question/${id}`}>
+              <div class="queastion">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Dolorum velit architecto dolor voluptatum ullam quaerat
+                reiciendis provident, blanditiis ipsa possimus, est
+                perspiciatis! Veniam illo sequi incidunt est, non rerum eius.
+              </div>
             </Link>
           </div>
           <div class="answer_container">
@@ -64,12 +70,13 @@ function Question(params) {
             </div>
           </div>
           <div class="queastion_container">
-            <Link to={`/question/${id}`}><div class="queastion">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum
-              velit architecto dolor voluptatum ullam quaerat reiciendis
-              provident, blanditiis ipsa possimus, est perspiciatis! Veniam illo
-              sequi incidunt est, non rerum eius.
-            </div>
+            <Link to={`/question/${id}`}>
+              <div class="queastion">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Dolorum velit architecto dolor voluptatum ullam quaerat
+                reiciendis provident, blanditiis ipsa possimus, est
+                perspiciatis! Veniam illo sequi incidunt est, non rerum eius.
+              </div>
             </Link>
           </div>
           <div class="answer_container">
@@ -103,12 +110,13 @@ function Question(params) {
             </div>
           </div>
           <div class="queastion_container">
-            <Link to={`/question/${id}`}><div class="queastion">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum
-              velit architecto dolor voluptatum ullam quaerat reiciendis
-              provident, blanditiis ipsa possimus, est perspiciatis! Veniam illo
-              sequi incidunt est, non rerum eius.
-            </div>
+            <Link to={`/question/${id}`}>
+              <div class="queastion">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Dolorum velit architecto dolor voluptatum ullam quaerat
+                reiciendis provident, blanditiis ipsa possimus, est
+                perspiciatis! Veniam illo sequi incidunt est, non rerum eius.
+              </div>
             </Link>
           </div>
           <div class="answer_container">
@@ -128,10 +136,8 @@ function Question(params) {
           </div>
         </div>
       </div>
-
-</>
-    )
-    
+    </>
+  );
 }
 
-export default Question
+export default Question;
