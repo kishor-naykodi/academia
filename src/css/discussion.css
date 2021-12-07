@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&display=swap");
 /* =====================first page with questions================ */
 .header_bar {
-  padding-top:10px;
+  padding-top: 10px;
   height: 50px;
   background-color: rgb(39, 41, 48);
   display: flex;
@@ -44,7 +44,7 @@
   font-family: "DM Sans", sans-serif;
   font-weight: bold;
   font-size: 20px;
-  color:black;
+  color: black;
 }
 .queastion:hover {
   color: rgb(45, 111, 247);

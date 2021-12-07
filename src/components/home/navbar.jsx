@@ -27,7 +27,7 @@ class Navbar extends Component {
             <Link to="/">Home</Link>
           </li>
           <li className="nav__item">
-            <a href="#">classroom</a>
+            <Link to="/classroom">classroom</Link>
           </li>
           <li className="nav__item">
             <Link to="/question">Discussion Forum</Link>

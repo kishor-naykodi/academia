@@ -1,0 +1,72 @@
+:root {
+  --color-primary: #4dc591;
+  --color-secondary: #9ba1ff;
+  --color-tertiary: #ff7648;
+  --color-maintext: #191b32;
+  --color-bodytext: #9295a3;
+  --color-body-darker: #5c5577;
+  --color-border: #ccc;
+  --border-radius: 30px;
+  --margin: 1rem;
+}
+
+/* Typography */
+.class_main {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  line-height: 1.5;
+  color: var(--color-body);
+  background-image: linear-gradient(
+    90deg,
+    #69eacb 0%,
+    #eaccf8 48%,
+    #f9fea5 100%
+  );
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* Sidebar css */
+aside {
+  border: 1px solid white;
+  border-radius: 1.5rem;
+  margin: var(--margin);
+}
+
+.sidebar {
+  width: 280px;
+  height: 100vh;
+}
+
+.class_logo {
+  height: 32px;
+  width: 40px;
+  margin: 1rem;
+}
+
+.dropdown img {
+  width: 32px;
+  height: 32px;
+}
+
+.class_name {
+  margin-top: 7px;
+  font-style: normal;
+  font-size: 2.5rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", Verdana, sans-serif;
+  color: var(--color-maintext);
+  font-weight: bolder;
+}
+
+/* Dashboard css */
+
+.dash_title {
+  margin-top: var(--margin);
+  height: 15rem;
+  background-color: #4dc591;
+  border-radius: var(--border-radius);
+}
