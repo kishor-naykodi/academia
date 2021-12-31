@@ -39,7 +39,7 @@ aside {
 
 .sidebar {
   width: 280px;
-  height: 100vh;
+  height: 97vh;
 }
 
 .class_logo {
@@ -69,4 +69,38 @@ aside {
   height: 15rem;
   background-color: #4dc591;
   border-radius: var(--border-radius);
+}
+
+.learn_time {
+  border-radius: var(--border-radius);
+  height: 320px;
+}
+
+.activity {
+  border-radius: var(--border-radius);
+}
+
+.doughnut {
+  height: 10rem;
+  width: 10rem;
+}
+
+.calendar {
+  margin-top: var(--margin);
+  border-radius: var(--border-radius);
+}
+
+.list-group {
+  margin-top: var(--margin);
+  border-radius: var(--border-radius);
+}
+
+.box_style {
+  margin-top: var(--margin);
+  border-radius: var(--border-radius);
+}
+
+.learn_time canvas {
+  height: 270px !important;
+  width: 300px !important;
 }

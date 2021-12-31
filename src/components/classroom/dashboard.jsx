@@ -2,6 +2,10 @@ import React from "react";
 import Sidebar from "./sidebar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../css/classroom.css";
+import { DoughNut } from "./doughnut";
+import { LineChart } from "./linechart";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 class Dashboard extends React.Component {
   render() {
     return (
@@ -29,31 +33,25 @@ class Dashboard extends React.Component {
                 </div>
               </div>
               <div className="row align-items-md-stretch">
-                <div className="col-md-6">
-                  <div className="h-100 p-5  bg-light rounded-3">
-                    <h2 text-white>Change the background</h2>
-                    <p>
-                      Swap the background-color utility and add a `.text-*`
-                      color utility to mix up the jumbotron look. Then, mix and
-                      match with additional component themes and more.
-                    </p>
+                <div className="col-md-5">
+                  <div className="learn_time p-5 bg-light">
+                    <h2 className="fs-3 fw-bolder">Learning Progress.</h2>
+                    <DoughNut className="doughnut" responsive="false" />
                   </div>
                 </div>
-                <div className="col-md-6">
-                  <div className="h-100 p-5 bg-light border rounded-3">
-                    <h2>Add borders</h2>
-                    <p>
-                      Or, keep it light and add a border for some added
-                      definition to the boundaries of your content. look under
-                      the hood at the source HTML here as we've adjusted the
-                      alignment and sizing of both column's content
-                    </p>
+                <div className="col-md-7">
+                  <div className="activity h-100 p-5 bg-light border">
+                    <h2 className="fs-3 fw-bolder">My Activity</h2>
+                    <LineChart />
                   </div>
                 </div>
               </div>
+
               <div className="row">
-                <div className="my-3 p-3 bg-body rounded shadow-sm">
-                  <h6 className="border-bottom pb-2 mb-0">Recent updates</h6>
+                <div className="box_style my-3 p-3 bg-body shadow-sm">
+                  <h6 className="border-bottom pb-2 mb-0 fw-bold fs-2">
+                    My Courses
+                  </h6>
                   <div className="d-flex text-muted pt-3">
                     <svg
                       className="bd-placeholder-img flex-shrink-0 me-2 rounded"
@@ -74,7 +72,7 @@ class Dashboard extends React.Component {
 
                     <p className="pb-3 mb-0 small lh-sm border-bottom">
                       <strong className="d-block text-gray-dark">
-                        @username
+                        @python
                       </strong>
                       Some representative placeholder content, with some
                       information about this user. Imagine this being some sort
@@ -101,7 +99,7 @@ class Dashboard extends React.Component {
 
                     <p className="pb-3 mb-0 small lh-sm border-bottom">
                       <strong className="d-block text-gray-dark">
-                        @username
+                        @Data structure
                       </strong>
                       Some more representative placeholder content, related to
                       this other user. Another status update, perhaps.
@@ -120,108 +118,69 @@ class Dashboard extends React.Component {
                     >
                       <title>Placeholder</title>
                       <rect width="100%" height="100%" fill="#6f42c1" />
-                      <text x="50%" y="50%" fill="#6f42c1" dy=".3em">
-                        32x32
-                      </text>
                     </svg>
 
                     <p className="pb-3 mb-0 small lh-sm border-bottom">
-                      <strong className="d-block text-gray-dark">
-                        @username
-                      </strong>
-                      This user also gets some representative placeholder
-                      content. Maybe they did something interesting, and you
-                      really want to highlight this in the recent updates.
+                      <strong className="d-block text-gray-dark">@Java</strong>
+                      Some more representative placeholder content, related to
+                      this other user. Another status update, perhaps.
                     </p>
                   </div>
-                  <small className="d-block text-end mt-3">
-                    <a href="#">All updates</a>
-                  </small>
                 </div>
               </div>
             </div>
             <div className="col">
-              <div className="d-flex flex-column align-items-stretch flex-shrink-0 bg-white">
-                <a
-                  href="/"
-                  className="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom"
-                >
-                  <svg className="bi me-2" width="30" height="24">
-                    <use href="#bootstrap" />
-                  </svg>
-                  <span className="fs-1 fw-bolder">Schedule</span>
-                </a>
-                <div className="list-group list-group-flush border-bottom scrollarea">
-                  <a
-                    href="#"
-                    className="list-group-item list-group-item-action active py-3 lh-tight"
-                    aria-current="true"
-                  >
-                    <div className="d-flex w-100 align-items-center justify-content-between">
-                      <strong className="mb-1">List group item heading</strong>
-                      <small>Wed</small>
-                    </div>
-                    <div className="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    className="list-group-item list-group-item-action py-3 lh-tight"
-                  >
-                    <div className="d-flex w-100 align-items-center justify-content-between">
-                      <strong className="mb-1">List group item heading</strong>
-                      <small className="text-muted">Tues</small>
-                    </div>
-                    <div className="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    className="list-group-item list-group-item-action py-3 lh-tight"
-                  >
-                    <div className="d-flex w-100 align-items-center justify-content-between">
-                      <strong className="mb-1">List group item heading</strong>
-                      <small className="text-muted">Mon</small>
-                    </div>
-                    <div className="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
-                    </div>
-                  </a>
+              <Calendar className="calendar" />
 
-                  <a
-                    href="#"
-                    className="list-group-item list-group-item-action py-3 lh-tight"
-                    aria-current="true"
-                  >
-                    <div className="d-flex w-100 align-items-center justify-content-between">
-                      <strong className="mb-1">List group item heading</strong>
-                      <small className="text-muted">Wed</small>
+              <div className="list-group">
+                <a
+                  href="#"
+                  className="list-group-item list-group-item-action d-flex gap-3 py-3"
+                  aria-current="true"
+                >
+                  <div className="d-flex gap-2 w-100 justify-content-between">
+                    <div>
+                      <h3 className="mb-0">Upcoming task</h3>
+                      <hr />
+                      <h6 className="mb-0">List group item heading</h6>
+                      <p className="mb-0 opacity-75">
+                        Some placeholder content in a paragraph.
+                      </p>
                     </div>
-                    <div className="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
+                    <small className="opacity-50 text-nowrap">now</small>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  className="list-group-item list-group-item-action d-flex gap-3 py-3"
+                  aria-current="true"
+                >
+                  <div className="d-flex gap-2 w-100 justify-content-between">
+                    <div>
+                      <h6 className="mb-0">Another title here</h6>
+                      <p className="mb-0 opacity-75">
+                        Some placeholder content in a paragraph that goes a
+                        little longer so it wraps to a new line.
+                      </p>
                     </div>
-                  </a>
-                  <a
-                    href="#"
-                    className="list-group-item list-group-item-action py-3 lh-tight"
-                    aria-current="true"
-                  >
-                    <div className="d-flex w-100 align-items-center justify-content-between">
-                      <strong className="mb-1">List group item heading</strong>
-                      <small className="text-muted">Wed</small>
+                    <small className="opacity-50 text-nowrap">3d</small>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  className="list-group-item list-group-item-action d-flex gap-3 py-3"
+                  aria-current="true"
+                >
+                  <div className="d-flex gap-2 w-100 justify-content-between">
+                    <div>
+                      <h6 className="mb-0">Third heading</h6>
+                      <p className="mb-0 opacity-75">
+                        Some placeholder content in a paragraph.
+                      </p>
                     </div>
-                    <div className="col-10 mb-1 small">
-                      Some placeholder content in a paragraph below the heading
-                      and date.
-                    </div>
-                  </a>
-                </div>
+                    <small class="opacity-50 text-nowrap">1w</small>
+                  </div>
+                </a>
               </div>
             </div>
           </div>

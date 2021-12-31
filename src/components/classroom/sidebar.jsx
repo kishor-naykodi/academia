@@ -46,7 +46,7 @@ class Sidebar extends React.Component {
             </li>
             <li className="mb-3">
               <a href="/chat" className="nav-link text-dark">
-                <i class="fas fa-book mx-5"></i>
+                <i class="far fa-comment-alt mx-5"></i>
                 Chat
               </a>
             </li>
