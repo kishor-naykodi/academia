@@ -95,8 +95,15 @@ class Footer extends React.Component {
             </div>
           </section>
           <section className="footer__brand">
-            <img src="images/logo.svg" alt="" />
-            <p className="footer__copyright">Copyright 2021 Elearner</p>
+            <a className="nav__brand" href="/">
+              <img src="images/logo.webp" alt="" />
+              <i id="webName" href="/">
+                Academia
+              </i>
+            </a>
+            <p className="footer__copyright">
+              Copyright &copy; 2021 academia.com
+            </p>
           </section>
         </div>
       </footer>

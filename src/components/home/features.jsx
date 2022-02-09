@@ -3,7 +3,7 @@ import React from "react";
 class Features extends React.Component {
   render() {
     return (
-      <section className="block container">
+      <section className="block--secondary block wide-block">
         <header className="block__header">
           <h2>Academia the best learning platform...</h2>
           <p>

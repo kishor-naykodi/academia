@@ -5,7 +5,7 @@ class Testimonials extends React.Component {
     return (
       <section className="block" data-aos="zoom-in">
         <header className="block__header">
-          <h2>What our Customers are Saying</h2>
+          <h2 className="heading__dark">What our Customers are Saying</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut,
             ipsam.
@@ -38,7 +38,7 @@ class Testimonials extends React.Component {
                       </svg>
                     </div>
                     <div className="media__body">
-                      <h3 className="media__title quote__author">
+                      <h3 className="heading__dark media__title quote__author">
                         Martin Fowler
                       </h3>
                       <p className="quote__organization">ABC Company</p>

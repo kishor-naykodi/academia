@@ -5,7 +5,7 @@ class Domain extends React.Component {
     return (
       <section data-aos="fade-up" className="block container block-courses">
         <header className="block__header">
-          <h2>Start your Engineering journey...</h2>
+          <h2 className="heading__dark">Start your Engineering journey...</h2>
           <p>Search your favorite courses here.</p>
         </header>
         <div className="input-group">

@@ -7,6 +7,7 @@ import Forum from "./components/discussion/discForum";
 import QuestionWithAnswer from "./components/discussion/queWithAns";
 import QuestionWithAllAnswers from "./components/discussion/queWithAllAns.jsx";
 import SubjectContainer from "./components/discussion/subject";
+import Login from "./components/home/login";
 
 const AppRouter = () => {
   return (
@@ -21,6 +22,7 @@ const AppRouter = () => {
         path="/question/allans/:que_id"
         element={<QuestionWithAllAnswers />}
       />
+      <Route path="/login" element={<Login />} />
     </Routes>
   );
 };

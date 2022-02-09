@@ -38,8 +38,9 @@ class Navbar extends Component {
           <li className="nav__item">
             <a href="#">About Us</a>
           </li>
-          <li id="Account" className="nav__item fa-lg">
-            <a href="#" className="fas fa-user-circle"></a>
+          <li id="Account" className="nav__item">
+            {/* <a href="#" className="fas fa-user-circle"></a> */}
+            <Link to="/login">Sign in</Link>
           </li>
         </ul>
       </nav>

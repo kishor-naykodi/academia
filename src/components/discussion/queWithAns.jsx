@@ -129,14 +129,14 @@ function QuestionWithAns(params) {
               <div class="form_answer_container">
                 <input
                   type="text"
-                  class="input"
+                  class="disc-input"
                   name="name"
                   placeholder="Your name"
                 />
 
                 <input
                   type="email"
-                  class="input"
+                  class="disc-input"
                   name="email"
                   placeholder="Your email"
                 />
