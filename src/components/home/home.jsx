@@ -7,6 +7,8 @@ import Testimonials from "./testimonials";
 import Navbar from "./navbar";
 import Footer from "./footer";
 
+//css imports
+import "../../css/home.css";
 class Home extends React.Component {
   render() {
     return (

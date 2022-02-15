@@ -254,7 +254,7 @@ function QueastionWithAllAns(params) {
             <div class="show_all_ans_btn btn">
               <Link to="/question">Back to Question Category</Link>
             </div>
-            <div class="show_all_ans_btn btn">
+            <div class="show_all_ans_btn btn-disc">
               <Link to="/">Back to Home </Link>
             </div>
           </div>

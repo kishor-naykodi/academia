@@ -108,7 +108,7 @@ function QuestionWithAns(params) {
           </div>
 
           <div class="show_all_ans_btn_background">
-            <div class="show_all_ans_btn btn">
+            <div class="show_all_ans_btn btn-disc">
               <Link to={`/question/allans/${que_id}`}>Show all Answers</Link>
             </div>
           </div>
@@ -147,7 +147,7 @@ function QuestionWithAns(params) {
               </div>
 
               <input
-                class="btn ans_submit_btn"
+                class="btn-disc ans_submit_btn"
                 type="submit"
                 value="Submit Your answer"
               />

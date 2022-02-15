@@ -1,5 +1,5 @@
 @import url(css/normalize.css);
-
+@import url(css/home.css);
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
