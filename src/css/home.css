@@ -348,15 +348,17 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 177px 130px 33px 95px;
+  padding: 1rem;
 }
 
 .aside-pic {
   transform: perspective(300px) rotateX(0deg) rotateY(0deg);
+  margin: auto;
 }
 
 .login-form {
-  width: 290px;
+  width: 80%;
+  margin: auto;
 }
 
 .form-input {
@@ -368,7 +370,7 @@ a {
   background: #e6e6e6;
   height: 50px;
   border-radius: 25px;
-  padding: 0 30px 0 68px;
+  padding: 0 30px 0 30px;
   outline: none;
   border: none;
 }
@@ -413,7 +415,6 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 20px;
 }
 
 .login-text {
@@ -439,7 +440,6 @@ a {
 }
 
 .create-account {
-  padding-top: 136px;
   cursor: pointer;
   text-decoration: underline;
   text-align: center;
@@ -458,6 +458,45 @@ a {
   width: 100%;
   display: block;
   padding-bottom: 25px;
+}
+
+.alert {
+  margin: 1.5rem 3rem;
+}
+
+.alert-danger {
+  color: rgb(223, 80, 80);
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .login-container {
+    height: 80vh;
+    width: 90%;
+  }
+
+  .form-input,
+  .btn-submit {
+    width: 90%;
+    margin: 2rem;
+  }
+
+  .aside-pic {
+    display: flex;
+    transform: perspective(300px) rotateX(0deg) rotateY(0deg);
+    width: 48%;
+    justify-content: center;
+  }
+
+  .aside-pic > img {
+    height: 80%;
+    width: 80%;
+  }
+
+  .login-form {
+    width: 48%;
+    margin: auto;
+  }
 }
 
 /* Cards */
@@ -525,6 +564,10 @@ a {
 }
 
 @media screen and (min-width: 1024px) {
+  .login-container {
+    width: 960px;
+  }
+
   .course--popular {
     transform: scale(1.07);
   }

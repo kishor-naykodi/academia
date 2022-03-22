@@ -245,12 +245,11 @@
   .main-card:first-child {
     height: 320px;
     width: 150%;
-    margin: 0;
+    margin-bottom: 0;
   }
 
   .main-card:nth-child(2) {
     height: 320px;
     width: 70%;
-    margin: 0;
   }
 }
