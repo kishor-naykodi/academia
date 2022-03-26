@@ -4,55 +4,55 @@ function QuestionWithAns(params) {
 
   return (
     <>
-      <div class="header_bar subject_bar">
-        <div class="header_one subject_bar_header">Answers</div>
-        <div class="header_one">
+      <div className="header_bar subject_bar">
+        <div className="header_one subject_bar_header">Answers</div>
+        <div className="header_one">
           <Link to="/subjects">Subjects</Link>
         </div>
-        <div class="header_one">
+        <div className="header_one">
           <Link to="/popularquestion">Popular questions</Link>
         </div>
       </div>
-      <div class="answer_Container_background">
-        <div class="queastions_container">
-          <div class="name_container">
-            <div class="name">Abhsihek</div>
-            <div class="tag_name tags">Professionals</div>
-            <div class="sub_text">
-              <div class="asked">Asked :</div>
-              <div class="date name">Date</div>
+      <div className="answer_Container_background">
+        <div className="queastions_container">
+          <div className="name_container">
+            <div className="name">Abhsihek</div>
+            <div className="tag_name tags">Professionals</div>
+            <div className="sub_text">
+              <div className="asked">Asked :</div>
+              <div className="date name">Date</div>
             </div>
-            <div class="sub_text">
-              <div class="in">In :</div>
+            <div className="sub_text">
+              <div className="in">In :</div>
 
-              <div class="language name">language</div>
+              <div className="language name">language</div>
             </div>
           </div>
-          <div class="queastion_container">
-            <div class="queastion">
+          <div className="queastion_container">
+            <div className="queastion">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum
               velit architecto dolor voluptatum ullam quaerat reiciendis
               provident, blanditiis ipsa possimus, est perspiciatis! Veniam illo
               sequi incidunt est, non rerum eius.
             </div>
           </div>
-          <div class="tags_container">
-            <div class="tags">English</div>
-            <div class="tags">language</div>
+          <div className="tags_container">
+            <div className="tags">English</div>
+            <div className="tags">language</div>
           </div>
 
-          <div class="answer_container_background">
-            <div class="detail_answer_container">
-              <div class="answer_detail">
-                <div class="answer_detail_header">
-                  <div class="answer_user">UserName</div>
-                  <div class="answer_sub_text">
-                    <div class="answered">Answerd :</div>
-                    <div class="date name">Date :</div>
+          <div className="answer_container_background">
+            <div className="detail_answer_container">
+              <div className="answer_detail">
+                <div className="answer_detail_header">
+                  <div className="answer_user">UserName</div>
+                  <div className="answer_sub_text">
+                    <div className="answered">Answerd :</div>
+                    <div className="date name">Date :</div>
                   </div>
                 </div>
 
-                <div class="answer_detail_answer">
+                <div className="answer_detail_answer">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Deleniti doloribus ab odio ipsa quos accusamus dicta eligendi
                   incidunt beatae, similique iure vitae voluptate unde natus ex
@@ -63,17 +63,17 @@ function QuestionWithAns(params) {
                 </div>
               </div>
             </div>
-            <div class="detail_answer_container">
-              <div class="answer_detail">
-                <div class="answer_detail_header">
-                  <div class="answer_user">UserName</div>
-                  <div class="answer_sub_text">
-                    <div class="answered">Answerd :</div>
-                    <div class="date name">Date :</div>
+            <div className="detail_answer_container">
+              <div className="answer_detail">
+                <div className="answer_detail_header">
+                  <div className="answer_user">UserName</div>
+                  <div className="answer_sub_text">
+                    <div className="answered">Answerd :</div>
+                    <div className="date name">Date :</div>
                   </div>
                 </div>
 
-                <div class="answer_detail_answer">
+                <div className="answer_detail_answer">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Deleniti doloribus ab odio ipsa quos accusamus dicta eligendi
                   incidunt beatae, similique iure vitae voluptate unde natus ex
@@ -84,17 +84,17 @@ function QuestionWithAns(params) {
                 </div>
               </div>
             </div>
-            <div class="detail_answer_container">
-              <div class="answer_detail">
-                <div class="answer_detail_header">
-                  <div class="answer_user">UserName</div>
-                  <div class="answer_sub_text">
-                    <div class="answered">Answerd :</div>
-                    <div class="date name">Date :</div>
+            <div className="detail_answer_container">
+              <div className="answer_detail">
+                <div className="answer_detail_header">
+                  <div className="answer_user">UserName</div>
+                  <div className="answer_sub_text">
+                    <div className="answered">Answerd :</div>
+                    <div className="date name">Date :</div>
                   </div>
                 </div>
 
-                <div class="answer_detail_answer">
+                <div className="answer_detail_answer">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Deleniti doloribus ab odio ipsa quos accusamus dicta eligendi
                   incidunt beatae, similique iure vitae voluptate unde natus ex
@@ -107,47 +107,47 @@ function QuestionWithAns(params) {
             </div>
           </div>
 
-          <div class="show_all_ans_btn_background">
-            <div class="show_all_ans_btn btn-disc">
+          <div className="show_all_ans_btn_background">
+            <div className="show_all_ans_btn btn-disc">
               <Link to={`/question/allans/${que_id}`}>Show all Answers</Link>
             </div>
           </div>
 
-          <div class="answer_submit_container">
+          <div className="answer_submit_container">
             <form
               action="#"
               method="post"
               id="submit_answer"
-              class="submit_answer_form"
+              className="submit_answer_form"
             >
-              <div class="form_answer_container">
-                <label class="form_input" for="answer">
+              <div className="form_answer_container">
+                <label className="form_input" for="answer">
                   Leave your answer
                 </label>
-                <input class="answer_box" type="text" name="answer" />
+                <input className="answer_box" type="text" name="answer" />
               </div>
-              <div class="form_answer_container">
+              <div className="form_answer_container">
                 <input
                   type="text"
-                  class="disc-input"
+                  className="disc-input"
                   name="name"
                   placeholder="Your name"
                 />
 
                 <input
                   type="email"
-                  class="disc-input"
+                  className="disc-input"
                   name="email"
                   placeholder="Your email"
                 />
               </div>
-              <div class="form_answer_container">
+              <div className="form_answer_container">
                 <label for="file"> Upload the file </label>
-                <input type="file" class="input_file" name="file" />
+                <input type="file" className="input_file" name="file" />
               </div>
 
               <input
-                class="btn-disc ans_submit_btn"
+                className="btn-disc ans_submit_btn"
                 type="submit"
                 value="Submit Your answer"
               />

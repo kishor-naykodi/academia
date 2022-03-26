@@ -9,27 +9,38 @@ import QuestionWithAnswer from "./components/discussion/queWithAns";
 import QuestionWithAllAnswers from "./components/discussion/queWithAllAns.jsx";
 import SubjectContainer from "./components/discussion/subject";
 import Login from "./components/home/login";
+import Logout from "./components/home/logout";
+import Register from "./components/home/register";
+import auth from "./services/authService";
 
 //css file imports
 import "./css/normalize.css";
-import Register from "./components/home/register";
 class App extends React.Component {
+  state = {};
+
+  componentDidMount() {
+    const user = auth.getCurrentUser();
+    this.setState({ user });
+  }
+
   render() {
+    const { user } = this.state;
     return (
       <React.Fragment>
         <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home user={user} />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/question" element={<Forum />} />
-            <Route path="/classroom" element={<Dashboard />} />
-            <Route path="/subjects" element={<SubjectContainer />} />
             <Route path="/popularquestion" element={<Forum />} />
             <Route path="/question/:id" element={<QuestionWithAnswer />} />
             <Route
               path="/question/allans/:que_id"
               element={<QuestionWithAllAnswers />}
             />
+            <Route path="/subjects" element={<SubjectContainer />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<Register />} />
           </Routes>
         </Router>

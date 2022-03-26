@@ -1,7 +1,7 @@
 :root {
   --color-primary: #24292f;
   --color-secondary: #040d21;
-  --color-accent: #2da44e;
+  --color-accent: #238636;
   --color-body-darker: radial-gradient(
     circle 610px at 5.2% 51.6%,
     rgba(5, 8, 114, 1) 0%,
@@ -236,13 +236,15 @@ a {
   vertical-align: middle;
 }
 
-.btn--primary {
-  background: var(--color-primary);
+.btn-primary {
+  background: var(--color-accent);
+  border-color: rgba(240, 246, 252, 0.1);
   color: #fff;
+  box-shadow: 0 0 transparent;
 }
 
-.btn--primary:hover {
-  background: #3a8ffd;
+.btn-primary:hover {
+  background: #2ea043;
 }
 
 .btn--secondary {
@@ -329,174 +331,119 @@ a {
 }
 
 /* Login */
-.block-login {
-  width: 100%;
-  min-height: 100vh;
+.session-authentication {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 15px;
-  background: var(--color-body-darker);
+  background-color: #0d1117;
+  /* background: var(--color-body-darker); */
+  height: 100vh;
 }
 
-.login-container {
-  width: 960px;
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 1rem;
+.auth-form {
+  width: 340px;
+  margin: 0 auto;
+  padding: 1.5rem;
 }
 
-.aside-pic {
-  transform: perspective(300px) rotateX(0deg) rotateY(0deg);
-  margin: auto;
-}
-
-.login-form {
-  width: 80%;
-  margin: auto;
-}
-
-.form-input {
-  font-size: 15px;
-  line-height: 1.5;
-  color: #666;
-  display: block;
-  width: 100%;
-  background: #e6e6e6;
-  height: 50px;
-  border-radius: 25px;
-  padding: 0 30px 0 30px;
-  outline: none;
-  border: none;
-}
-
-.wrap-input {
-  position: relative;
-  width: 100%;
-  z-index: 1;
-  margin-bottom: 10px;
-}
-
-.symbol-input {
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  border-radius: 25px;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding-left: 35px;
-  pointer-events: none;
-  color: #666;
-}
-
-.btn-submit {
-  font-family: Montserrat-Bold;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #fff;
-  text-transform: uppercase;
-  width: 100%;
-  height: 50px;
-  border-radius: 25px;
-  background: #57b846;
-}
-
-.btn-container {
-  width: 100%;
-  border-radius: 28px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.login-text {
-  font-family: Poppins-Regular;
-  font-size: 13px;
-  line-height: 1.5;
-  color: #999;
-  padding-top: 12px;
-  align-items: center;
+.auth-form-header {
+  margin-bottom: 16px;
+  color: #c9d1d9;
   text-align: center;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
 }
 
-.login-text a {
-  font-family: Poppins-Regular;
-  font-size: 15px;
-  line-height: 1.5;
-  text-decoration: none;
-  color: #666;
-}
-
-.login-text a:hover {
-  color: #2da44e;
-}
-
-.create-account {
-  cursor: pointer;
-  text-decoration: underline;
-  text-align: center;
-}
-
-.arrow {
-  margin-left: 5px;
-}
-
-.legend {
-  font-family: Poppins-Bold;
+.auth-form-header h1 {
   font-size: 24px;
-  color: #333;
-  line-height: 1.2;
-  text-align: center;
-  width: 100%;
+  font-weight: 300;
+  letter-spacing: -0.5px;
+}
+
+.auth-form-body {
+  padding: 16px;
+  font-size: 14px;
+  background-color: #161b22;
+  border: 1px solid #21262d;
+  border-top: 0;
+  border-radius: 6px;
+}
+
+/* input */
+.auth-form-body .input-block {
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.input-block {
   display: block;
-  padding-bottom: 25px;
+  width: 100%;
+}
+.form-control,
+.form-select {
+  padding: 5px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #c9d1d9;
+  vertical-align: middle;
+  background-color: #0d1117;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  outline: none;
+  box-shadow: 0 0 transparent;
 }
 
-.alert {
-  margin: 1.5rem 3rem;
+.btn-login {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
-.alert-danger {
-  color: rgb(223, 80, 80);
-  font-size: 1.5rem;
+.login-callout {
+  font-size: 1.4rem;
+  margin-top: 16px;
+  padding: 16px 16px;
+  text-align: center;
+  border: 1px solid #30363d;
+  border-radius: 6px;
 }
 
-@media screen and (min-width: 768px) {
-  .login-container {
-    height: 80vh;
-    width: 90%;
-  }
+.login-link,
+.register-link {
+  color: #1f6feb;
+}
 
-  .form-input,
-  .btn-submit {
-    width: 90%;
-    margin: 2rem;
-  }
+.session-authentication .flash {
+  padding: 16px 16px;
+  margin: 0 auto;
+  margin-bottom: 8px;
+  font-size: 13px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
 
-  .aside-pic {
-    display: flex;
-    transform: perspective(300px) rotateX(0deg) rotateY(0deg);
-    width: 48%;
-    justify-content: center;
-  }
+.flash-full,
+.flash-banner {
+  background-color: var(--color-canvas-default);
+}
 
-  .aside-pic > img {
-    height: 80%;
-    width: 80%;
-  }
+.flash-error {
+  color: #c9d1d9;
+  background-image: linear-gradient(
+    rgba(248, 81, 73, 0.15),
+    rgba(248, 81, 73, 0.15)
+  );
+  border-color: rgba(248, 81, 73, 0.4);
+}
 
-  .login-form {
-    width: 48%;
-    margin: auto;
-  }
+.px-2 {
+  padding-right: 8px !important;
+  padding-left: 8px !important;
 }
 
 /* Cards */
@@ -875,8 +822,56 @@ a {
   width: 38px;
 }
 
-#Account {
+/* Account css */
+.account {
+  font-size: 2.8rem;
+}
+
+.dropdown {
+  display: inline-block;
+  /* position: relative; */
+}
+
+.dropdown-menu {
   display: none;
+  position: absolute;
+  font-size: 1.5rem;
+  width: 150px;
+  padding: 4px 0;
+  margin-top: 2px;
+  list-style: none;
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 5px;
+  box-shadow: 0 8px 24px #010409;
+}
+
+.dropdown-menu-sw {
+  right: 0;
+  left: auto;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-item {
+  display: block;
+  padding: 4px 8px 4px 16px;
+  overflow: hidden;
+  color: #c1d1d9;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  color: #ffffff;
+  background-color: #1f6feb;
+}
+
+.dropdown-divider {
+  display: block;
+  height: 0;
+  margin: 8px 0;
+  border-top: 1px solid #30363d;
 }
 
 @media screen and (min-width: 768px) {
@@ -898,6 +893,8 @@ a {
 
   #Account {
     display: inline-block;
+    font-size: 3rem;
+    height: 1rem;
   }
 }
 

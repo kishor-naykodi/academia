@@ -4,7 +4,10 @@ import Input from "./input";
 import { Link } from "react-router-dom";
 
 class Form extends Component {
-  state = { data: { username: "", password: "" }, errors: [] };
+  state = {
+    data: {},
+    errors: [],
+  };
 
   validate = () => {
     const options = { abortEarly: false };
@@ -50,18 +53,13 @@ class Form extends Component {
 
   renderButton(label) {
     return (
-      <div className="btn-container">
-        <button
-          disabled={this.validate()}
-          className="btn btn--accent btn-submit"
-        >
-          {label}
-        </button>
-      </div>
+      <button disabled={this.validate()} className="btn btn-primary btn-login">
+        {label}
+      </button>
     );
   }
 
-  renderInput(name, type = "text") {
+  renderInput(name, label, type = "text") {
     const { data, errors } = this.state;
 
     return (
@@ -69,6 +67,7 @@ class Form extends Component {
         type={type}
         name={name}
         value={data[name]}
+        label={label}
         onChange={this.handleChange}
         error={errors[name]}
       />

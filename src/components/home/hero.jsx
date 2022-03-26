@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Hero extends React.Component {
   render() {
@@ -15,9 +16,9 @@ class Hero extends React.Component {
               className="hero__input"
               placeholder="Email Address"
             />
-            <a href="" className="hero__btn btn btn--accent btn--stretched">
+            <Link to="#" className="hero__btn btn btn--accent btn--stretched">
               Get Started
-            </a>
+            </Link>
           </header>
           <picture data-aos="zoom-in">
             <source type="image/webp" srcSet="images/home_laptop.webp" />

@@ -5,33 +5,33 @@ function Question(params) {
   const id = 1;
   return (
     <>
-      <div class="header_bar">
-        <div class="header_one">
+      <div className="header_bar">
+        <div className="header_one">
           <Link to="/subjects">Subjects</Link>
         </div>
-        <div class="header_one">
+        <div className="header_one">
           <Link to="/popularquestion">Popular questions</Link>
         </div>
       </div>
 
-      <div class="questions_container_background">
-        <div class="queastions_container">
-          <div class="name_container">
-            <div class="name">Abhsihek</div>
-            <div class="tag_name tags">Professionals</div>
-            <div class="sub_text">
-              <div class="asked">Asked :</div>
-              <div class="date name">Date</div>
+      <div className="questions_container_background">
+        <div className="queastions_container">
+          <div className="name_container">
+            <div className="name">Abhsihek</div>
+            <div className="tag_name tags">Professionals</div>
+            <div className="sub_text">
+              <div className="asked">Asked :</div>
+              <div className="date name">Date</div>
             </div>
-            <div class="sub_text">
-              <div class="in">In :</div>
+            <div className="sub_text">
+              <div className="in">In :</div>
 
-              <div class="language name">language</div>
+              <div className="language name">language</div>
             </div>
           </div>
-          <div class="queastion_container">
+          <div className="queastion_container">
             <Link to={`/question/${id}`}>
-              <div class="queastion">
+              <div className="queastion">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Dolorum velit architecto dolor voluptatum ullam quaerat
                 reiciendis provident, blanditiis ipsa possimus, est
@@ -39,8 +39,8 @@ function Question(params) {
               </div>
             </Link>
           </div>
-          <div class="answer_container">
-            <div class="answer">
+          <div className="answer_container">
+            <div className="answer">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
               doloribus ab odio ipsa quos accusamus dicta eligendi incidunt
               beatae, similique iure vitae voluptate unde natus ex doloremque
@@ -50,28 +50,28 @@ function Question(params) {
               nesciunt doloribus.
             </div>
           </div>
-          <div class="tags_container">
-            <div class="tags">English</div>
-            <div class="tags">language</div>
+          <div className="tags_container">
+            <div className="tags">English</div>
+            <div className="tags">language</div>
           </div>
         </div>
-        <div class="queastions_container">
-          <div class="name_container">
-            <div class="name">Abhsihek</div>
-            <div class="tag_name tags">Professionals</div>
-            <div class="sub_text">
-              <div class="asked">Asked :</div>
-              <div class="date name">Date</div>
+        <div className="queastions_container">
+          <div className="name_container">
+            <div className="name">Abhsihek</div>
+            <div className="tag_name tags">Professionals</div>
+            <div className="sub_text">
+              <div className="asked">Asked :</div>
+              <div className="date name">Date</div>
             </div>
-            <div class="sub_text">
-              <div class="in">In :</div>
+            <div className="sub_text">
+              <div className="in">In :</div>
 
-              <div class="language name">language</div>
+              <div className="language name">language</div>
             </div>
           </div>
-          <div class="queastion_container">
+          <div className="queastion_container">
             <Link to={`/question/${id}`}>
-              <div class="queastion">
+              <div className="queastion">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Dolorum velit architecto dolor voluptatum ullam quaerat
                 reiciendis provident, blanditiis ipsa possimus, est
@@ -79,8 +79,8 @@ function Question(params) {
               </div>
             </Link>
           </div>
-          <div class="answer_container">
-            <div class="answer">
+          <div className="answer_container">
+            <div className="answer">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
               doloribus ab odio ipsa quos accusamus dicta eligendi incidunt
               beatae, similique iure vitae voluptate unde natus ex doloremque
@@ -90,28 +90,28 @@ function Question(params) {
               nesciunt doloribus.
             </div>
           </div>
-          <div class="tags_container">
-            <div class="tags">English</div>
-            <div class="tags">language</div>
+          <div className="tags_container">
+            <div className="tags">English</div>
+            <div className="tags">language</div>
           </div>
         </div>
-        <div class="queastions_container">
-          <div class="name_container">
-            <div class="name">Abhsihek</div>
-            <div class="tag_name tags">Professionals</div>
-            <div class="sub_text">
-              <div class="asked">Asked :</div>
-              <div class="date name">Date</div>
+        <div className="queastions_container">
+          <div className="name_container">
+            <div className="name">Abhsihek</div>
+            <div className="tag_name tags">Professionals</div>
+            <div className="sub_text">
+              <div className="asked">Asked :</div>
+              <div className="date name">Date</div>
             </div>
-            <div class="sub_text">
-              <div class="in">In :</div>
+            <div className="sub_text">
+              <div className="in">In :</div>
 
-              <div class="language name">language</div>
+              <div className="language name">language</div>
             </div>
           </div>
-          <div class="queastion_container">
+          <div className="queastion_container">
             <Link to={`/question/${id}`}>
-              <div class="queastion">
+              <div className="queastion">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Dolorum velit architecto dolor voluptatum ullam quaerat
                 reiciendis provident, blanditiis ipsa possimus, est
@@ -119,8 +119,8 @@ function Question(params) {
               </div>
             </Link>
           </div>
-          <div class="answer_container">
-            <div class="answer">
+          <div className="answer_container">
+            <div className="answer">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti
               doloribus ab odio ipsa quos accusamus dicta eligendi incidunt
               beatae, similique iure vitae voluptate unde natus ex doloremque
@@ -130,9 +130,9 @@ function Question(params) {
               nesciunt doloribus.
             </div>
           </div>
-          <div class="tags_container">
-            <div class="tags">English</div>
-            <div class="tags">language</div>
+          <div className="tags_container">
+            <div className="tags">English</div>
+            <div className="tags">language</div>
           </div>
         </div>
       </div>

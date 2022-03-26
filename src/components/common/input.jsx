@@ -1,11 +1,21 @@
 import React from "react";
 
-const Input = ({ name, error, ...rest }) => {
+const Input = ({ name, label, error, ...rest }) => {
   return (
-    <div className="wrap-input">
-      <input {...rest} name={name} className="form-input" placeholder={name} />
+    <div>
+      <label htmlFor={name}>{label}</label>
+      <input
+        {...rest}
+        name={name}
+        id={name}
+        className="form-control input-block js-login-field"
+      ></input>
 
-      {error && <div className="alert alert-danger">{error}</div>}
+      {error && (
+        <div className="flash flash-full flash-error ">
+          <div className="px-2">{error}</div>
+        </div>
+      )}
     </div>
   );
 };

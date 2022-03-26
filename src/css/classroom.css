@@ -37,20 +37,6 @@
   padding-right: 16px;
 }
 
-.account {
-  padding: 0;
-  height: 3rem;
-  width: 3.5rem;
-  border-radius: 100%;
-  overflow: hidden;
-}
-
-.account__img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
 .header__content {
   display: flex;
   justify-content: center;
@@ -130,7 +116,7 @@
   .sidenav {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
   }
 }
 

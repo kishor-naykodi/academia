@@ -39,7 +39,7 @@ class Sidenav extends React.Component {
               </a>
             </li>
             <li className="sidenav__list-item">
-              <a href="/chat">
+              <a href="/question">
                 <FaCommentAlt className="sidenav__icon" />
                 Chat
               </a>

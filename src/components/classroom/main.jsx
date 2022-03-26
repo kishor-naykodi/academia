@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import StudentProgress from "./progressGraph";
 import Performance from "./pieChart";
-
+import auth from "./../../services/authService";
 class Main extends Component {
-  state = {};
   render() {
     return (
       <main className="main">
         <h1 className="main__title">Dashboard</h1>
         <div className="main-header">
-          <div className="main-header__heading">Hello User,</div>
+          <div className="main-header__heading">
+            Hello {auth.getCurrentUser().name},
+          </div>
           <div className="main-header__updates">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
             tempora pariatur repellendus quas maiores iste. Itaque, distinctio

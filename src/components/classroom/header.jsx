@@ -3,6 +3,8 @@ import { FaRegBell } from "react-icons/fa";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { RiEnglishInput } from "react-icons/ri";
 import { MdOutlineDarkMode } from "react-icons/md";
+import Account from "./../common/account";
+import auth from "./../../services/authService";
 
 class Header extends Component {
   render() {
@@ -16,17 +18,7 @@ class Header extends Component {
           <MdOutlineDarkMode className="header__icon" />
           <RiEnglishInput className="header__icon" />
           <FaRegBell className="header__icon" />
-          <div className="header__avatar header__icon">
-            <a href="#">
-              <div className="account">
-                <img
-                  className="account__img"
-                  src="/images/account.jpg"
-                  alt=""
-                />
-              </div>
-            </a>
-          </div>
+          <Account className="dash-account" user={auth.getCurrentUser()} />
         </div>
       </header>
     );

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 class Footer extends React.Component {
   render() {
     return (
@@ -14,16 +15,16 @@ class Footer extends React.Component {
             <div className="collapsible__content">
               <ul className="list">
                 <li>
-                  <a href="#">Online Learning</a>
+                  <Link to="#">Online Learning</Link>
                 </li>
                 <li>
-                  <a href="#">About Us</a>
+                  <Link to="#">About Us</Link>
                 </li>
                 <li>
-                  <a href="#">Careers</a>
+                  <Link to="#">Careers</Link>
                 </li>
                 <li>
-                  <a href="#">Become An Instructor</a>
+                  <Link to="#">Become An Instructor</Link>
                 </li>
               </ul>
             </div>
@@ -38,13 +39,13 @@ class Footer extends React.Component {
             <div className="collapsible__content">
               <ul className="list">
                 <li>
-                  <a href="#">Academic Solution</a>
+                  <Link to="#">Academic Solution</Link>
                 </li>
                 <li>
-                  <a href="#">Affiliates</a>
+                  <Link to="#">Affiliates</Link>
                 </li>
                 <li>
-                  <a href="#">Blog</a>
+                  <Link to="#">Blog</Link>
                 </li>
               </ul>
             </div>
@@ -59,13 +60,13 @@ class Footer extends React.Component {
             <div className="collapsible__content">
               <ul className="list">
                 <li>
-                  <a href="#">Admissions Policy</a>
+                  <Link to="#">Admissions Policy</Link>
                 </li>
                 <li>
-                  <a href="#">Getting Started</a>
+                  <Link to="#">Getting Started</Link>
                 </li>
                 <li>
-                  <a href="#">FAQ</a>
+                  <Link to="#">FAQ</Link>
                 </li>
               </ul>
             </div>
@@ -80,16 +81,16 @@ class Footer extends React.Component {
             <div className="collapsible__content">
               <ul className="list">
                 <li>
-                  <a href="#">Support</a>
+                  <Link to="#">Support</Link>
                 </li>
                 <li>
-                  <a href="#">Terms of Use</a>
+                  <Link to="#">Terms of Use</Link>
                 </li>
                 <li>
-                  <a href="#">Contact Us</a>
+                  <Link to="#">Contact Us</Link>
                 </li>
                 <li>
-                  <a href="#">Site Feedback</a>
+                  <Link to="#">Site Feedback</Link>
                 </li>
               </ul>
             </div>

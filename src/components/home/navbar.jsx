@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Account from "../common/account";
 class Navbar extends Component {
   toggle() {
     const collapsibles = document.querySelectorAll(".collapsible");
@@ -13,35 +14,34 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="nav collapsible nav_toggle" onLoad={this.toggle}>
-        <a className="nav__brand" href="/">
+        <NavLink className="nav__brand" to="/">
           <img src="images/logo.webp" alt="" />
-          <i id="webName" href="/">
-            Academia
-          </i>
-        </a>
+          <i id="webName">Academia</i>
+        </NavLink>
         <svg className="icon icon--white nav__toggler">
-          <use href="images/sprite.svg#menu"></use>
+          <use to="images/sprite.svg#menu"></use>
         </svg>
         <ul className="list nav__list collapsible__content">
           <li className="nav__item">
-            <Link to="/">Home</Link>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          {this.props.user && (
+            <li className="nav__item">
+              <NavLink to="/dashboard">classroom</NavLink>
+            </li>
+          )}
+          <li className="nav__item">
+            <NavLink to="#">Teachers</NavLink>
           </li>
           <li className="nav__item">
-            <Link to="/classroom">classroom</Link>
+            <NavLink to="#">About Us</NavLink>
           </li>
-          <li className="nav__item">
-            <Link to="/question">Discussion Forum</Link>
-          </li>
-          <li className="nav__item">
-            <a href="#">Teachers</a>
-          </li>
-          <li className="nav__item">
-            <a href="#">About Us</a>
-          </li>
-          <li id="Account" className="nav__item">
-            {/* <a href="#" className="fas fa-user-circle"></a> */}
-            <Link to="/login">Sign in</Link>
-          </li>
+          {!this.props.user && (
+            <li className="nav__item">
+              <NavLink to="/login">Sign in</NavLink>
+            </li>
+          )}
+          {this.props.user && <Account user={this.props.user} />}
         </ul>
       </nav>
     );

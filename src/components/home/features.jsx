@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Features extends React.Component {
   render() {
@@ -23,9 +24,9 @@ class Features extends React.Component {
               A dashboard and the everything layouted well so that everyone can
               browse content fine.
             </p>
-            <a href="#" className="link-arrow">
+            <Link to="#" className="link-arrow">
               Learn More
-            </a>
+            </Link>
           </div>
           <picture data-aos="zoom-in-left">
             <source
@@ -51,9 +52,9 @@ class Features extends React.Component {
               We’re with the mission to provide a free, world-class education
               for anyone, anywhere.
             </p>
-            <a href="#" className="link-arrow">
+            <Link to="#" className="link-arrow">
               Learn More
-            </a>
+            </Link>
           </div>
           <picture>
             <source
@@ -80,9 +81,9 @@ class Features extends React.Component {
               obcaecati vel ad unde est illo at. Labore excepturi officia
               dolores!
             </p>
-            <a href="#" className="link-arrow">
+            <Link to="#" className="link-arrow">
               Learn More
-            </a>
+            </Link>
           </div>
           <picture>
             <source
