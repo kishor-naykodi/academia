@@ -6,24 +6,24 @@ import { Link, Navigate } from "react-router-dom";
 
 class Login extends Form {
   state = {
-    data: { username: "", password: "" },
+    data: { email: "", password: "" },
     errors: {},
   };
 
   schema = {
-    username: Joi.string().required().label("Username"),
+    email: Joi.string().required().label("Username"),
     password: Joi.string().required().label("Password"),
   };
 
   doSubmit = async () => {
     try {
       const { data } = this.state;
-      await auth.login(data.username, data.password);
+      await auth.login(data.email, data.password);
       window.location = "/";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         const errors = { ...this.state.errors };
-        errors.username = ex.response.data;
+        errors.email = ex.response.data;
         this.setState({ errors });
       }
     }
@@ -40,7 +40,7 @@ class Login extends Form {
           </div>
           <form onSubmit={this.handleSubmit}>
             <div className="auth-form-body">
-              {this.renderInput("username", "Username")}
+              {this.renderInput("email", "Username")}
               {this.renderInput("password", "Password", "password")}
               {this.renderButton("Sign In")}
             </div>

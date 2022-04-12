@@ -6,15 +6,14 @@ import auth from "../../services/authService";
 import { Link, Navigate } from "react-router-dom";
 class Register extends Form {
   state = {
-    data: { username: "", password: "", name: "", role: "" },
+    data: { email: "", password: "", username: "" },
     errors: {},
   };
 
   schema = {
-    username: Joi.string().required().email().label("Username"),
+    email: Joi.string().email().required().label("Email"),
     password: Joi.string().required().min(5).label("Password"),
-    name: Joi.string().required().label("Name"),
-    role: Joi.string().required().label("Role"),
+    username: Joi.string().required().label("Username"),
   };
 
   doSubmit = async () => {
@@ -25,7 +24,7 @@ class Register extends Form {
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         const errors = { ...this.state.errors };
-        errors.username = ex.response.data;
+        errors.email = ex.response.data;
         this.setState({ errors });
       }
     }
@@ -42,10 +41,9 @@ class Register extends Form {
           </div>
           <form onSubmit={this.handleSubmit}>
             <div className="auth-form-body">
-              {this.renderInput("username", "Enter your email")}
+              {this.renderInput("email", "Enter your email")}
               {this.renderInput("password", "Create a password", "password")}
-              {this.renderInput("name", "Enter a username")}
-              {this.renderInput("role", "Signing in as [ student, teacher ]")}
+              {this.renderInput("username", "Enter a username")}
 
               {this.renderButton("Sign Up")}
             </div>

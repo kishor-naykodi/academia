@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //import components for routing
 import Home from "./components/home/home";
-import Dashboard from "./components/classroom/dashboard";
+import Dashboard from "./components/dashboard/dashboard";
 import Forum from "./components/discussion/discForum";
 import QuestionWithAnswer from "./components/discussion/queWithAns";
 import QuestionWithAllAnswers from "./components/discussion/queWithAllAns.jsx";
@@ -12,6 +12,7 @@ import Login from "./components/home/login";
 import Logout from "./components/home/logout";
 import Register from "./components/home/register";
 import auth from "./services/authService";
+import Classroom from "./components/dashboard/classroom/classroom";
 
 //css file imports
 import "./css/normalize.css";
@@ -31,6 +32,7 @@ class App extends React.Component {
           <Routes>
             <Route path="/" element={<Home user={user} />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/classroom" element={<Classroom />} />
             <Route path="/question" element={<Forum />} />
             <Route path="/popularquestion" element={<Forum />} />
             <Route path="/question/:id" element={<QuestionWithAnswer />} />

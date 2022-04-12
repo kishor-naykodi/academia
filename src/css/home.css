@@ -851,9 +851,13 @@ a {
   left: auto;
 }
 
-.dropdown:hover .dropdown-menu {
+.show_dropdown_menu {
   display: block;
 }
+
+/* .dropdown:hover .dropdown-menu {
+  display: block;
+} */
 .dropdown-item {
   display: block;
   padding: 4px 8px 4px 16px;

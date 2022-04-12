@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import StudentProgress from "./progressGraph";
 import Performance from "./pieChart";
-import auth from "./../../services/authService";
-class Main extends Component {
+import auth from "../../services/authService";
+class DashMain extends Component {
   render() {
     return (
       <main className="main">
         <h1 className="main__title">Dashboard</h1>
         <div className="main-header">
           <div className="main-header__heading">
-            Hello {auth.getCurrentUser().name},
+            Hello {auth.getCurrentUser().username},
           </div>
           <div className="main-header__updates">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
@@ -53,4 +53,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default DashMain;

@@ -1,18 +1,20 @@
 import React, { Component } from "react";
 import Sidenav from "./sidenav";
 import Header from "./header";
-import Main from "./main";
+import DashMain from "./dashMain";
 
 import "../../css/classroom.css";
 class Dashboard extends Component {
   render() {
     return (
-      // Simple dashboard grid layout
-      <div className="grid-container">
-        <Header />
+      <>
+        <div className="grid-container">
+          <Header />
+
+          <DashMain />
+        </div>
         <Sidenav />
-        <Main />
-      </div>
+      </>
     );
   }
 }
