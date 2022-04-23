@@ -2,14 +2,17 @@ import React from "react";
 import ClassMain from "./classMain";
 import Header from "../header";
 import Sidenav from "../sidenav";
+import ClassNav from "./classNav";
 
 const Classroom = (props) => {
   return (
     <>
       <div className="grid-container">
         <Header />
-
-        <ClassMain />
+        <div>
+          <ClassNav />
+          <ClassMain />
+        </div>
       </div>
       <Sidenav />
     </>

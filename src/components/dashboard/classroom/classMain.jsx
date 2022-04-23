@@ -1,60 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { getClassrooms } from "../../../services/classService";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import {
-  MdOutlineFolderOpen,
-  MdOutlineAssignmentInd,
-  MdOutlineAdd,
-  MdOutlineFactCheck,
-  MdOutlineTopic,
-  MdCalendarToday,
-} from "react-icons/md";
-import ClassForm from "./classForm";
+import { MdOutlineFolderOpen, MdOutlineAssignmentInd } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 function ClassMain(props) {
   const [classrooms, setClassroom] = useState([]);
-  const [addClass, setAddClass] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getClassrooms();
-      setClassroom(result.data);
+      const classrooms = await getClassrooms();
+      setClassroom(classrooms);
     };
+
     fetchData();
   }, []);
 
   return (
     <main className="main">
-      <nav className="class_nav">
-        <div className="class-links">
-          <div className="nav__link">
-            <a href="#">
-              <MdOutlineFactCheck className="nav__icon" />
-              To do
-            </a>
-          </div>
-          <div className="nav__link">
-            <a href="#">
-              <MdOutlineTopic className="nav__icon" />
-              To review
-            </a>
-          </div>
-          <div className="nav__link">
-            <a href="#">
-              <MdCalendarToday className="nav__icon" />
-              Calendar
-            </a>
-          </div>
-        </div>
-        <MdOutlineAdd
-          className="add_class"
-          onClick={() => {
-            setAddClass(!addClass);
-          }}
-        />
-      </nav>
-      {addClass && <ClassForm />}
-      {!addClass && (
+      <div id="main-class" className="class-container">
         <div>
           <ol className="block-classes">
             {classrooms.map((classroom) => (
@@ -65,17 +29,17 @@ function ClassMain(props) {
                 >
                   <div className="head__content">
                     <h3 className="class__title">
-                      <a href="#">
+                      <Link to="#">
                         <div className="wrap_header class__heading">
                           {`${classroom.classname} [${classroom.subject}]`}
                         </div>
                         <div className="wrap_header text-sm">
                           {classroom.section}
                         </div>
-                      </a>
-                      <a href="#">
+                      </Link>
+                      <Link to="#">
                         <BsThreeDotsVertical />
-                      </a>
+                      </Link>
                     </h3>
                     <span className="class__author text-sm">
                       {classroom.author.name}
@@ -99,7 +63,7 @@ function ClassMain(props) {
             ))}
           </ol>
         </div>
-      )}
+      </div>
     </main>
   );
 }

@@ -1,11 +1,37 @@
 import http from "./httpService";
 import { apiUrl } from "../config.json";
-import auth from "./authService";
+import auth, { getCurrentUser } from "./authService";
+import { nanoid } from "nanoid";
 
 const apiEndPoint = apiUrl + "/classroom";
 
-export function getClassrooms() {
-  return http.get(apiEndPoint);
+export async function getClassrooms() {
+  const createdClassrooms = await http.get(
+    `${apiEndPoint}/created/${getCurrentUser()._id}`
+  );
+  console.log(createdClassrooms);
+  const studiedClassrooms = await http.get(
+    `${apiEndPoint}/studied/${getCurrentUser()._id}`
+  );
+  console.log(studiedClassrooms);
+  const taughtClassrooms = await http.get(
+    `${apiEndPoint}/taught/${getCurrentUser()._id}`
+  );
+  console.log(taughtClassrooms);
+  const classrooms = [
+    ...studiedClassrooms.data,
+    ...createdClassrooms.data,
+    ...taughtClassrooms.data,
+  ];
+  return classrooms;
+}
+
+export function getStudiedClassrooms() {
+  return http.get(`${apiEndPoint}/studied/${getCurrentUser()._id}`);
+}
+
+export function getTaughtClassrooms() {
+  return http.get(`${apiEndPoint}/taught/${getCurrentUser()._id}`);
 }
 
 export function createClass(newClass) {
@@ -17,8 +43,17 @@ export function createClass(newClass) {
       _id: auth.getCurrentUser()._id,
       name: auth.getCurrentUser().username,
     },
+    code: nanoid(11),
     imgUrl: getImgUrl(),
   });
+}
+
+export function joinClass(data) {
+  const result = http.post(apiEndPoint + "/students/register", {
+    student: getCurrentUser()._id,
+    code: data.classcode,
+  });
+  return result;
 }
 
 function getImgUrl() {

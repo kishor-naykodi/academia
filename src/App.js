@@ -13,6 +13,8 @@ import Logout from "./components/home/logout";
 import Register from "./components/home/register";
 import auth from "./services/authService";
 import Classroom from "./components/dashboard/classroom/classroom";
+import CreateClass from "./components/dashboard/classroom/create_class";
+import JoinClass from "./components/dashboard/classroom/join_class";
 
 //css file imports
 import "./css/normalize.css";
@@ -44,6 +46,8 @@ class App extends React.Component {
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/classroom/create" element={<CreateClass />} />
+            <Route path="/classroom/join" element={<JoinClass />} />
           </Routes>
         </Router>
       </React.Fragment>
