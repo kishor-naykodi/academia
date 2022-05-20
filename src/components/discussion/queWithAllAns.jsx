@@ -2,13 +2,11 @@ import { Link } from "react-router-dom";
 function QueastionWithAllAns(params) {
   return (
     <>
-      <div className="header_bar subject_bar">
-        <div className="header_one subject_bar_header">All Answers</div>
-        <div className="header_one">
-          <Link to="/subjects">Subjects</Link>
-        </div>
-        <div className="header_one">
-          <Link to="/popularquestion">Popular questions</Link>
+      <div class="header_bar subject_bar">
+        <div class="header_one subject_bar_header">All Answers</div>
+        
+        <div class="header_one">
+          <Link to="/question"> questions</Link>
         </div>
       </div>
       <div className="answer_Container_background">

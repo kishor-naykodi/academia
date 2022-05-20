@@ -1,33 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&display=swap");
 /* =====================first page with questions================ */
 .header_bar {
-  padding-top: 10px;
   height: 50px;
   background-color: rgb(39, 41, 48);
   display: flex;
-  justify-content: flex-end;
+
   gap: 10px;
   color: white;
+  padding-right: 15px;
 }
 .header_one {
   padding-right: 15px;
   padding-top: 10px;
   font-family: "DM Sans", sans-serif;
 }
+.header_one.home {
+  margin-left: auto;
+}
+.backArrow {
+  padding-left: 70px;
+}
 .header_one:hover {
   color: rgb(45, 111, 247);
 }
 .questions_container_background {
   padding: 50px;
+  background-color: #f3f3f3;
 }
 .queastions_container {
-  box-shadow: 10px 10px 8px #888888;
-  border-radius: 20px;
-  padding: 0px 20px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
   display: flex;
   gap: 20px;
   flex-direction: column;
   margin-top: 20px;
+  font-size: 16px;
 }
 .name_container {
   display: flex;
@@ -39,11 +47,16 @@
 .name {
   color: rgb(45, 111, 247);
   font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+}
+.faint_name {
+  color: rgba(0, 0, 0, 0.493);
+  font-size: 15px;
 }
 .queastion {
   font-family: "DM Sans", sans-serif;
   font-weight: bold;
-  font-size: 20px;
+
   color: black;
 }
 .queastion:hover {
@@ -54,6 +67,13 @@
   font-family: "DM Sans", sans-serif;
   color: rgba(0, 0, 0, 0.521);
 }
+.divider {
+  border: 0.5px solid rgba(128, 128, 128, 0.281);
+}
+.posted_by {
+  color: rgba(0, 0, 0, 0.493);
+  font-size: 13px;
+}
 .tags_container {
   padding-bottom: 10px;
   display: flex;
@@ -61,9 +81,13 @@
 }
 .tags {
   border: 1px solid grey;
-  border-radius: 20px;
-  padding: 2px 10px;
+  border-radius: 5px;
+  background-color: #3953dc;
+  padding: 1px 5px;
+  color: white;
+  font-size: 12px;
 }
+
 .tags:hover {
   background-color: rgb(45, 111, 247);
   color: white;
@@ -72,16 +96,148 @@
 .in {
   font-family: "DM Sans", sans-serif;
   color: rgba(0, 0, 0, 0.493);
+  font-size: 16px;
 }
+.question_blank_msg{
+  height:657px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+ 
+}
+/* =============================Drop down btn */
+.dropdown_container {
+  display: flex;
+  flex-direction: column;
+  background-color: #272930;
+  justify-content: center;
+  padding-left: 10px;
+}
+.dropDown_title:hover{
+  cursor: pointer;
+}
+/* =======================dropDwon Menu for subject ========= */
+
+.dropDown_Menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0px;
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.897);
+  margin-left: -1700px;
+}
+
+.dropDown_Menu_list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+  color: white;
+  width: 350px;
+  height: 100%;
+  background-color: black;
+  
+  overflow-y: scroll;
+  padding-bottom: 500px;
+}
+.dropDown_item{
+  
+  border:0.5px solid grey;
+  
+  padding-left:20px ;
+  padding-top:10px;
+  padding-bottom:5px;
+}
+.dropDown_item:hover{
+  cursor: pointer;
+}
+.cancelIcon {
+  width: 350px;
+  color: white;
+  background-color: black;
+  text-align: right;
+  padding: 10px 30px;
+}
+.gradiant{
+  position: absolute;
+  top: 500px;
+  width: 350px;
+  height: 300px;
+  background:linear-gradient(to top, black 0%, rgba(0, 0, 0, 0.877) 50%, rgba(0, 0, 0, 0.767) 75%,rgba(0, 0, 0, 0.521) 90%,rgba(0, 0, 0, 0.253) 100%);
+}
+.dropDown_Menu_list::-webkit-scrollbar {
+  display: none;
+}
+
+.dropDown_Menu.show {
+  margin-left: 0px;
+  transition: 0.5s ease-in-out;
+}
+.classroom_msg{
+  font-size: 13px;
+  
+  display:flex;
+  height: 50px;
+  align-items: center;
+  justify-content:center;
+}
+/* ======================= */
 @media (max-width: 768px) {
+  .name{
+    font-size: 13px;
+  }
+  .faint_name{
+    font-size:13px;
+  }
+  .asked{
+    font-size: 13px;
+  }
+  .in{
+    font-size: 13px;
+  }
   .name_container {
     flex-wrap: wrap;
     display: flex;
-    flex-direction: column;
+    
     gap: 10px;
+    font-size: 16px;
   }
   .tags {
     width: fit-content;
+  }
+  .queastions_container,
+  .queastion {
+    font-size: 14px;
+    padding: 5px 5px;
+  }
+  .questions_container_background {
+    padding: 3px;
+    height: 100%;
+  }
+  .header_one {
+    padding-right: 0px;
+    font-size: 15px;
+  }
+
+  .subject_bar_header {
+    margin-left: auto;
+  }
+  .backArrow {
+    padding-left: 10px;
+  }
+  .dropDown_Menu_list{
+    width:250px;
+
+  }
+  .gradiant{
+    width:250px;
+  }
+  .cancelIcon{
+    width:250px;
   }
 }
 /*=========================== subject container =====================*/
@@ -105,9 +261,10 @@
 
 .subject_bar {
   justify-content: flex-start;
+  align-items: center;
 }
 .subject_bar_header {
-  margin: 0 50px;
+  margin-left: auto;
 }
 /*=====================answer container======================== */
 .answer_Container_background {
@@ -115,6 +272,8 @@
 }
 .detail_answer_container {
   padding: 50px 50px;
+  background-color: #f3f3f3;
+  margin-bottom: 10px;
 }
 .detail_answer_container {
   display: flex;
@@ -127,6 +286,7 @@
 .answer_detail_header {
   display: flex;
   flex-direction: row;
+  gap:10px;
 }
 .answer_sub_text {
   margin-left: auto;
@@ -164,10 +324,29 @@ a {
 }
 .answer_user {
   color: rgb(45, 111, 247);
-  font-size: 17px;
+  font-size: 13px;
+}
+.date_name {
+  font-size: 13px;
 }
 .answer_user:hover {
   color: black;
+}
+
+@media (max-width: 768px) {
+  .detail_answer_container {
+    padding: 0px 10px;
+  }
+
+  .header_bar {
+    padding-right: 15px;
+  }
+  .answer_Container_background {
+    padding: 0px 3px;
+  }
+  .header_bar {
+    font-size: 15px;
+  }
 }
 /* ========================================================= */
 /* ============Form container====================== */
