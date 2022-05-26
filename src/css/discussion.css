@@ -127,7 +127,7 @@
   z-index: 999;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.897);
+  background-color: rgba(0, 0, 0, 0.5);
   margin-left: -1700px;
 }
 
@@ -386,6 +386,15 @@ a {
   border-radius: 10px;
   height: 25px;
   width: 300px;
+  
+}
+.answer_textarea{
+
+}
+.submitAnswerContainer{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
 }
 @media (max-width: 992px) {
   .answer_box {

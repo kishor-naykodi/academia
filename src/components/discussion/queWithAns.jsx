@@ -1,22 +1,47 @@
 import { Link } from "react-router-dom";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack' ;
 import {useParams} from 'react-router-dom';
-import {useEffect} from "react"
+import {useEffect,useState} from "react"
 import axios from 'axios';
 import {useDispatch,useSelector} from "react-redux";
 import actions from "../../features/actions"
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import {useNavigate } from "react-router-dom"
 
 
 
 function QuestionWithAns(params) {
   
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const dispatch=useDispatch();
+  const [submitAnswer,setSubmitAnswer]= useState("");
+  const [msg,setMsg]=useState(null)
+  const navigate=useNavigate()
+  
 
   const questionWithAns=useSelector((states)=>states.questionWithAnswer);
-  console.log(questionWithAns)
-
+  const user=useSelector((states)=>states.user);
   const {id} =useParams();
+  
+  const style = {
+  position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: 'None',
+    boxShadow: 24,
+    p: 4,
    
+  };
+   
+  
   useEffect(()=>{
     async function fetchQuestion_with_answer(){
       const question_with_Answer= await axios.get(`http://localhost:3001/api/discussion/retrieve_question/${id}`);
@@ -85,7 +110,28 @@ function Answer(){
     )
   }
 }
+async function SubmitAnswer() {
+ try {
+  if(questionWithAns.qid){
+    
+    const results=await axios.post(`http://localhost:3001/api/discussion/answer/${questionWithAns.qid}`,{
+      "answer":`${submitAnswer}`,
+      "user":{"username":`${user.value.username}`},
+      "question_id":`${questionWithAns.qid}`,
+       "user_id":`${user.value._id}`
+      });
+      // setMsg("Answer Submitted successfully");
+      alert(`Answer Submitted successfully`);
+      handleClose()
+      navigate(`/question`)
+  }
+   
+ } catch (error) {
+   console.log(error)
+ }
 
+  
+}
   return (
     <>
       <div className="header_bar subject_bar">
@@ -124,17 +170,49 @@ function Answer(){
           
           </div>
           <div className="divider"></div>
+          <Button onClick={handleOpen}>Submit Your Answer</Button>
           <div className="answer_container_background">
             <Answer/>
             {/*  */}
 
           </div>
 
-          <div className="show_all_ans_btn_background">
+          {/* <div className="show_all_ans_btn_background">
             <div className="show_all_ans_btn btn-disc">
               <Link to={`/question/allans/${id}`}>Show all Answers</Link>
             </div>
-          </div>
+          </div> */}
+         
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+             
+                <div className="submitAnswerContainer">
+                  <div className="submitAnswerTitle" >
+                    Enter Your Answer
+                  </div>
+                  <div>
+                  <textarea className="answer_textarea" onChange={(e)=>{setSubmitAnswer(e.target.value)}} defaultValue={submitAnswer}>
+                   
+                  </textarea>
+                  </div>
+                  <div className="show_all_ans_btn_background">
+                <div className="show_all_ans_btn btn-disc" onClick={SubmitAnswer}>
+                  Submit Your Answer
+                </div>
+                   </div>
+                
+                </div>
+                
+                
+
+            
+            </Box>
+          </Modal>
         </div>
       </div>
     </>

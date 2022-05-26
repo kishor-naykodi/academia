@@ -4,20 +4,41 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import CancelIcon from '@mui/icons-material/Cancel';
 
 import {useSelector,useDispatch} from "react-redux"
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import actions from "../../features/actions"
 import axios from "axios";
 import auth from "../../services/authService";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import {useNavigate } from "react-router-dom"
 
 
 function Question(params) {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const dispatch=useDispatch()
   const user=useSelector((states)=>states.user);
   const classroom=useSelector((states)=>states.classroom);
   const questions=useSelector((states)=>states.question);
+  const [submitQuestion,setSubmitQuestion]= useState("");
+  const navigate =useNavigate()
 
   
-  
+  const style = {
+    position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      width: 400,
+      bgcolor: 'background.paper',
+      border: 'None',
+      boxShadow: 24,
+      p: 4,
+     
+    };
   
 
 
@@ -45,7 +66,10 @@ function Question(params) {
      
     };
     fetchclassroom();
-  },[user,dispatch]);
+  },[user,dispatch,navigate]);
+  useEffect(()=>{
+    
+  })
   
 
 
@@ -146,7 +170,29 @@ function Question(params) {
      }
    }
   //  ============================================================== 
-  
+  async function SubmitQuestion() {
+    try {
+     if(questions.classroom_id){
+       
+       const results=await axios.post(`http://localhost:3001/api/discussion/questions`,{
+        "question":`${submitQuestion}`,
+         "user":{"username":`${user.value.username}`},
+         "classroom_id":`${questions.classroom_id}`,
+          "user_id":`${user.value._id}`
+         });
+         // setMsg("Answer Submitted successfully");
+         alert(`Question Submitted successfully`);
+         handleClose()
+         fetchQuestion(questions.classroom_id)
+         setSubmitQuestion("")
+     }
+      
+    } catch (error) {
+      console.log(error)
+    }
+   
+     
+   }
 
 
 
@@ -184,13 +230,42 @@ function Question(params) {
       </div>
         {/* ======================Question container with one ans========= */}
       <div className="questions_container_background">
-        {questions.value.length>=1?<Question/>:<div className="question_blank_msg">
+        {questions.value.length>=1?<><Button onClick={handleOpen}>Ask The Question</Button><Question/></>:<div className="question_blank_msg">
           Possible reasons for not showing questions :<br/>
           Looks Like You didn't selected classroom Or seems It does't have any questions.<br/>
           Or you are not enrolled in any classroom yet.<br/> For checking you are enrolled in classroom or not,<br/>
            Check top-left classroom tab.</div>}
        
-        
+           <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+             
+                <div className="submitAnswerContainer">
+                  <div className="submitAnswerTitle" >
+                    Ask the Question
+                  </div>
+                  <div>
+                  <textarea className="answer_textarea" onChange={(e)=>{setSubmitQuestion(e.target.value)}} defaultValue={submitQuestion}>
+                   
+                  </textarea>
+                  </div>
+                  <div className="show_all_ans_btn_background">
+                <div className="show_all_ans_btn btn-disc" onClick={SubmitQuestion}>
+                  Submit Your Question
+                </div>
+                   </div>
+                
+                </div>
+                
+                
+
+            
+            </Box>
+          </Modal>
         
       </div>
     </>
