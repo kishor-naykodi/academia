@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import StudentProgress from "./progressGraph";
-import Performance from "./pieChart";
-import auth from "../../services/authService";
+import StudentProgress from "../data_visualizer/progressGraph";
+import Performance from "../data_visualizer/pieChart";
+import auth from "../../../services/authService";
 class DashMain extends Component {
   render() {
     return (

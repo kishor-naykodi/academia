@@ -839,6 +839,7 @@ a {
   width: 150px;
   padding: 4px 0;
   margin-top: 2px;
+  text-align: left;
   list-style: none;
   background-color: #161b22;
   border: 1px solid #30363d;
@@ -855,15 +856,13 @@ a {
   display: block;
 }
 
-/* .dropdown:hover .dropdown-menu {
-  display: block;
-} */
 .dropdown-item {
   display: block;
   padding: 4px 8px 4px 16px;
   overflow: hidden;
   color: #c1d1d9;
   text-decoration: none;
+  height: auto;
 }
 
 .dropdown-menu a:hover {

@@ -1,9 +1,9 @@
 import React from "react";
 import Joi from "joi-browser";
 import Form from "../../common/form";
-import Header from "../header";
+import Header from "../profile/header";
 import ClassNav from "./classNav";
-import Sidenav from "../sidenav";
+import Sidenav from "../profile/sidenav";
 import * as classService from "../../../services/classService";
 
 class CreateClass extends Form {

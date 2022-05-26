@@ -9,15 +9,12 @@ export async function getClassrooms() {
   const createdClassrooms = await http.get(
     `${apiEndPoint}/created/${getCurrentUser()._id}`
   );
-  console.log(createdClassrooms);
   const studiedClassrooms = await http.get(
     `${apiEndPoint}/studied/${getCurrentUser()._id}`
   );
-  console.log(studiedClassrooms);
   const taughtClassrooms = await http.get(
     `${apiEndPoint}/taught/${getCurrentUser()._id}`
   );
-  console.log(taughtClassrooms);
   const classrooms = [
     ...studiedClassrooms.data,
     ...createdClassrooms.data,
@@ -26,12 +23,8 @@ export async function getClassrooms() {
   return classrooms;
 }
 
-export function getStudiedClassrooms() {
-  return http.get(`${apiEndPoint}/studied/${getCurrentUser()._id}`);
-}
-
-export function getTaughtClassrooms() {
-  return http.get(`${apiEndPoint}/taught/${getCurrentUser()._id}`);
+export function getClassroom(id) {
+  return http.get(`${apiEndPoint}/${id}`);
 }
 
 export function createClass(newClass) {
@@ -49,11 +42,24 @@ export function createClass(newClass) {
 }
 
 export function joinClass(data) {
-  const result = http.post(apiEndPoint + "/students/register", {
+  return http.post(apiEndPoint + "/students/register", {
     student: getCurrentUser()._id,
     code: data.classcode,
   });
-  return result;
+}
+
+export function addStudent(classId, email) {
+  return http.post(apiEndPoint + "/student/add", {
+    classId,
+    email,
+  });
+}
+
+export function addTeacher(classId, email) {
+  return http.post(apiEndPoint + "/teacher/add", {
+    classId,
+    email,
+  });
 }
 
 function getImgUrl() {

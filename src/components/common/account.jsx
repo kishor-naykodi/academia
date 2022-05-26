@@ -10,8 +10,8 @@ class Account extends Component {
 
   render() {
     return (
-      <li className="account nav__item dropdown">
-        <div onClick={this.toggleAccountInfo}>
+      <li className="account dropdown">
+        <div onClick={this.toggleAccountInfo} className="class__icon">
           <MdAccountCircle />
         </div>
         <div className="dropdown-menu dropdown-menu-sw">

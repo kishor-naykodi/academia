@@ -3,9 +3,9 @@ import { FaRegBell } from "react-icons/fa";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { RiEnglishInput } from "react-icons/ri";
 import { MdOutlineDarkMode } from "react-icons/md";
-import Account from "./../common/account";
-import auth from "./../../services/authService";
-import { toggleSidenav } from "../common/utilFunc";
+import Account from "../../common/account";
+import auth from "../../../services/authService";
+import { toggleSidenav } from "../../common/utilFunc";
 
 class Header extends Component {
   render() {
@@ -20,7 +20,7 @@ class Header extends Component {
             <MdOutlineDarkMode className="header__icon" />
             <RiEnglishInput className="header__icon" />
             <FaRegBell className="header__icon" />
-            <Account className="dash-account" user={auth.getCurrentUser()} />
+            <Account className="header__icon" user={auth.getCurrentUser()} />
           </div>
         </header>
       </nav>

@@ -1,6 +1,5 @@
 import React from "react";
-import "../../css/classroom.css";
-import { toggleSidenav } from "../common/utilFunc";
+import { toggleSidenav } from "../../common/utilFunc";
 import {
   FaTachometerAlt,
   FaBook,
@@ -30,7 +29,7 @@ class Sidenav extends React.Component {
               <li className="sidenav__list-item">
                 <Link to="/dashboard">
                   <FaTachometerAlt className="sidenav__icon" />
-                  Dashboard
+                  Profile
                 </Link>
               </li>
               <li className="sidenav__list-item">

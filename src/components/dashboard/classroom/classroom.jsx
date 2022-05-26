@@ -1,21 +1,17 @@
 import React from "react";
 import ClassMain from "./classMain";
-import Header from "../header";
-import Sidenav from "../sidenav";
+import Sidenav from "../profile/sidenav";
 import ClassNav from "./classNav";
 
 const Classroom = (props) => {
   return (
-    <>
+    <React.Fragment>
       <div className="grid-container">
-        <Header />
-        <div>
-          <ClassNav />
-          <ClassMain />
-        </div>
+        <ClassNav />
+        <ClassMain />
       </div>
       <Sidenav />
-    </>
+    </React.Fragment>
   );
 };
 

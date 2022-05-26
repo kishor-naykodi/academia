@@ -12,7 +12,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 6.4rem 1fr;
   grid-template-areas:
     "header"
     "main";
@@ -29,24 +29,24 @@
 
 .header {
   background-color: #fff;
-  height: 6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 16px;
   border-bottom: 1px solid #e0e0e0;
 }
 
 .header__content {
   display: flex;
   justify-content: center;
-  align-items: center;
+  height: 4rem;
+  padding-right: 1rem;
+  text-align: center;
 }
 
 .header__icon {
   color: #019bff;
   font-size: 2rem;
-  margin: 2rem;
+  margin: 1.7rem;
   cursor: pointer;
 }
 
@@ -162,9 +162,9 @@
   font-size: 2rem;
 }
 
-/* main */
+/* classroom main */
 
-.main {
+.class__main {
   grid-area: main;
   background-color: #f9f9f9;
 }
@@ -277,21 +277,145 @@
 
 /* Classroom css */
 
-.class_nav {
-  margin: 3rem 4rem 0 5rem;
+.class__nav {
+  background: white;
+  border-bottom: 0.1rem solid #e0e0e0;
+  flex-shrink: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 986;
+}
+
+.nav-align {
+  align-items: center;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row;
 }
 
-.nav__link {
-  display: inline-flex;
+.nav__start {
+  flex: 1 1 0.1rem;
+  min-width: 0;
+}
+
+.brand-wrapper {
+  height: 6.4rem;
+  padding-left: 1.5rem;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.md-menu {
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+
+.Hwv4mb {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: 3.6rem;
+  max-width: 100%;
+  overflow: hidden;
 }
 
-.nav__link > a {
+.class-title {
+  letter-spacing: 0.00625em;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  color: #333;
+}
+.class-section {
+  letter-spacing: 0.025em;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6rem;
+  color: #5f6368;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+}
+
+.nav__center {
+  flex: 1 1 0.1rem;
+  margin: 0 1rem;
+  width: auto;
+  justify-content: center;
+  height: 6.4rem;
+  padding-right: 1.6rem;
+  line-height: 1.7em;
+}
+
+.xHPsid {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.navigate-wrapper {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.navigate {
+  color: #000;
+  height: 6.4rem;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 2.4rem 0 2.4rem;
+  position: relative;
+}
+
+.navigate:hover {
+  background: #c2dbff;
+}
+
+.navigate-active {
+  border-bottom: 5px solid #1967d2;
+  border-radius: 5px;
+}
+
+.EZrbnd {
+  letter-spacing: 0.01785714em;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2rem;
+  color: #3c4043;
+  text-transform: none;
+}
+
+.nav__end {
+  display: flex;
+  flex: 1 1 0.1rem;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 0.8rem;
+}
+
+.class__links {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -0.8rem;
+  padding-left: 2.4rem;
+  padding-top: 1.6rem;
+}
+
+.class__links-item {
+  display: inline;
+  color: #000;
+}
+
+.class__links-item > a {
+  height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -309,11 +433,9 @@
   align-self: center;
 }
 
-.add_class {
+#add-class {
   cursor: pointer;
-  font-size: 2.5rem;
-  color: #000;
-  margin-right: 2rem;
+  font-size: 3rem;
 }
 
 .block-classes {
@@ -365,6 +487,8 @@
   background-color: #137333;
   background-repeat: no-repeat;
   background-size: cover;
+
+  width: 100%;
 }
 
 .head__content {
@@ -422,10 +546,15 @@
 }
 
 .class__icon {
-  margin: 1rem;
-  height: 24px;
-  width: 24px;
-  fill: #000;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  cursor: pointer;
+  margin-right: 1.6rem;
+  font-size: 3rem;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
 }
 
 .create_class {
@@ -449,8 +578,8 @@
 
 .create_new {
   position: absolute;
-  top: 111px;
-  right: 80px;
+  top: 44px;
+  right: 111px;
   background: #fff;
   min-width: 112px;
   max-width: var(calc(100vw - 32px));
@@ -494,4 +623,340 @@
   .create_class-body {
     width: 100%;
   }
+}
+
+/* Stream css */
+
+.stream-container {
+  color: #000;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 2 * 2.4rem);
+  max-width: 100rem;
+}
+
+.stream__image {
+  height: 24rem;
+  position: relative;
+  width: 100%;
+  margin-top: 10rem;
+  background-image: url(https://gstatic.com/classroom/themes/img_backtoschool.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: aqua;
+  border-radius: 5px;
+}
+
+.stream__heading {
+  bottom: 0;
+  color: #fff;
+  left: 0;
+  padding: 1rem 1.5rem;
+  position: absolute;
+  right: 0;
+}
+
+.stream__title {
+  padding-right: 3.2rem;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 3.6rem;
+  font-weight: 500;
+  line-height: 4.4rem;
+  color: #fff;
+}
+
+.stream__content {
+  display: flex;
+  margin-top: 2.4rem;
+}
+
+.stream__aside {
+  flex-shrink: 0;
+}
+
+.class-code {
+  font-weight: 500;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+
+.stream-block {
+  background-color: white;
+  border: 0.0625rem solid #dadce0;
+  border-radius: 0.8rem;
+  flex-shrink: 0;
+  margin-right: 2.4rem;
+  margin-bottom: 2.4rem;
+  padding: 1.6rem;
+  width: 16.2rem;
+}
+
+.block-item {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.block-title {
+  padding-bottom: 1.6rem;
+  letter-spacing: 0.01785714em;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: #3c4043;
+  text-transform: none;
+  margin: 0;
+}
+
+.block-text {
+  color: rgba(0, 0, 0, 0.549);
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+.stream__main {
+  flex-grow: 1;
+}
+
+.stream__input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 7.2rem;
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.announce {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  font-size: 1.6rem;
+  color: rgba(0, 0, 0, 0.549);
+  height: 100%;
+  justify-content: flex-start;
+  padding-left: 3rem;
+}
+
+.stream__data {
+  display: flex;
+  align-items: center;
+  padding: 2rem 1rem 2rem 2rem;
+  margin-top: 2.4rem;
+  width: 100%;
+}
+
+.z3vRcc {
+  color: #1967d2;
+  fill: #1967d2;
+}
+
+.asQXV {
+  letter-spacing: 0.01785714em;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2rem;
+  color: #3c4043;
+}
+
+/* Classwork css */
+
+.classwork-container {
+  margin: 10rem auto;
+  width: -webkit-calc(100% - 2 * 2.4rem);
+  width: calc(100% - 2 * 2.4rem);
+  max-width: 76rem;
+  position: relative;
+}
+
+.class-work__main {
+  display: flex;
+}
+
+.classwork__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.classwork__content .class__links {
+  padding-top: 0;
+}
+
+.create-work {
+  background: #1967d2;
+  color: #fff;
+  height: 48px;
+  border: 0;
+  padding: 0 1rem;
+  width: 11rem;
+  border-radius: 3rem;
+  cursor: pointer;
+}
+
+.create-work__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.create-work__icon {
+  font-size: 2.4rem;
+  color: #fff;
+  margin-right: 0.5rem;
+}
+
+.create-work__txt {
+  position: relative;
+}
+
+.hr-ruler {
+  border-bottom: 0.2rem solid #e0e0e0;
+}
+
+.classwork__info {
+  margin-top: 5rem;
+}
+
+.tLDEHd {
+  letter-spacing: 0.01428571em;
+  font-family: Roboto, Arial, sans-serif;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2rem;
+  color: #3c4043;
+}
+
+/* People Css */
+
+.people-container {
+  margin: 10rem auto;
+  max-width: 76rem;
+  padding: 2.4rem 2.4rem;
+  height: 100vh;
+}
+
+.people-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.info-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+  padding-left: 1.6rem;
+  line-height: 7.2rem;
+}
+
+.info__title {
+  color: #1967d2;
+  fill: #1967d2;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 3.2rem;
+  margin: 0;
+  font-weight: 400;
+  line-height: 4.2rem;
+}
+
+.add-people__icon {
+  color: #1967d2;
+  padding-right: 1rem;
+  font-size: 2.4rem;
+}
+
+.skin-blue {
+  border-color: #1967d2;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  height: 6rem;
+  border-bottom: 0.1rem solid #e0e0e0;
+  padding: 0.8rem;
+}
+
+.user-data {
+  letter-spacing: 0.01785714em;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #3c4043;
+}
+
+/* Add people form */
+.form-display {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.add-people {
+  width: 30vw;
+  padding: 16px;
+  font-size: 14px;
+  background-color: #161b22;
+  border: 1px solid #21262d;
+  border-top: 0;
+  border-radius: 6px;
+}
+
+/* Schedule */
+.schedule__title {
+  color: #1967d2;
+  fill: #1967d2;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  line-height: 4.2rem;
+}
+
+.schedule-table {
+  margin-top: 3rem;
+  width: 100%;
+}
+.head-row {
+  line-height: 3.3;
+}
+
+.schedule__head {
+  color: #007b83;
+  font-size: 3rem;
+  padding: 8px 0;
+}
+
+.sch-row {
+  line-height: 2.2;
+}
+
+.sch-data {
+  font-size: 2.4rem;
+  text-align: center;
+  color: #3c4043;
+}
+
+.sch-link {
+  color: #551a8b;
+}
+
+.schedule-form {
+  position: absolute;
+}
+
+.center-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
