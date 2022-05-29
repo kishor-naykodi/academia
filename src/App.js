@@ -23,6 +23,8 @@ import Schedule from "./components/dashboard/schedule/sch_home";
 
 //css file imports
 import "./css/normalize.css";
+import Resource from "./components/dashboard/resources/resource";
+import SubmitWork from "./components/dashboard/classroom/class_manage/submitWork";
 class App extends React.Component {
   state = {};
 
@@ -58,6 +60,11 @@ class App extends React.Component {
             <Route path="/classroom/people/:_class" element={<People />} />
             <Route path="/classroom/marks/:_class" element={<Marks />} />
             <Route path="/schedule" element={<Schedule />} />
+            <Route path="/resources" element={<Resource />} />
+            <Route
+              path="/classroom/stream/:_class/submit_work"
+              element={<SubmitWork />}
+            />
           </Routes>
         </Router>
       </React.Fragment>

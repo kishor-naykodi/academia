@@ -81,3 +81,20 @@ function getImgUrl() {
 
   return imgUrls[generateRandom()];
 }
+
+export function createWork(assignment) {
+  return http.post(apiEndPoint + `/createAssignment/${assignment.classId}`, {
+    user_id: getCurrentUser()._id,
+    username: getCurrentUser().username,
+    classroom_id: assignment.classroom_id,
+    title: assignment.title,
+    description: assignment.description,
+    file: assignment.data,
+    due_date: assignment.due_date,
+    points: assignment.points,
+  });
+}
+
+export function getAssignments(id) {
+  return http.get(`${apiEndPoint}/assignment/${id}`);
+}

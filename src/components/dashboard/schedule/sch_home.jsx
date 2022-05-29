@@ -19,7 +19,7 @@ export default function SchHome() {
     <div>
       <ClassNav />
       <main style={{ margin: "100px" }}>
-        <h1 className="schedule__title">Todays Classes</h1>
+        <h1 className="schedule__title">Todays Schedule</h1>
         <div className="hr-ruler skin-blue"></div>
 
         <table className="schedule-table">
@@ -43,6 +43,7 @@ export default function SchHome() {
                         className="sch-link"
                         href={_class.class_link}
                         target="_blank"
+                        rel="noreferrer"
                       >
                         {_class.class_link}
                       </a>

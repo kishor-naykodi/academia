@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Sidenav from "../../profile/sidenav";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ClassNav from "../classNav";
+import * as classService from "../../../../services/classService";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 export default function Stream() {
+  const [assignments, setAssignments] = useState();
+  const [file, setFile] = useState();
   const _class = useLocation().state.classroom;
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const assignments = await classService.getAssignments(_class._id);
+      setAssignments(assignments.data);
+    };
+
+    fetchData();
+  }, [_class._id]);
+
+  const saveFile = (e) => {
+    setFile(e.target.files[0]);
+  };
+  console.log(assignments);
   return (
     <React.Fragment>
       <ClassNav {..._class} />
@@ -53,6 +70,42 @@ export default function Stream() {
                 </p>
               </div>
             </div>
+
+            {assignments &&
+              assignments.map((assignment) => (
+                <Link
+                  to={`/classroom/stream/${_class.code}/submit_work`}
+                  state={assignment}
+                >
+                  <div
+                    className="stream-block stream__data asn_main"
+                    key={assignment._id}
+                  >
+                    <div className="asn-brand">
+                      <div className="asn-head">
+                        <img
+                          className="tnyRnb"
+                          src="//lh3.googleusercontent.com/a/default-user=s40-c"
+                          alt="profile-img"
+                        />
+                        <div>
+                          <h1 className="tLDEHd">{assignment.username}</h1>
+                          <span className="dDKhVc">
+                            {assignment.due_date.substr(0, 10)}
+                          </span>
+                        </div>
+                      </div>
+                      <Link to="#" className="asn__options">
+                        <BsThreeDotsVertical />
+                      </Link>
+                    </div>
+                    <div>
+                      <p className="z3vRcc mg1x">{assignment.title}</p>
+                      <p className="asQXV mg1x">{assignment.description}</p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
           </main>
         </div>
       </div>
