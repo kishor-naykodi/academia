@@ -20,20 +20,24 @@ class DashMain extends Component {
         </div>
         <div className="main-overview">
           <div id="overviewcard1" className="overviewcard">
-            <div className="overviewcard__icon">Overview</div>
-            <div className="overviewcard__info">Card</div>
+            <div className="overviewcard__icon" id="dash-meet_link">
+              Upcoming Lecture
+            </div>
+            <div className="overviewcard__info">
+              https://meet.google.com/uxs-sxud-pfa
+            </div>
           </div>
           <div id="overviewcard2" className="overviewcard">
-            <div className="overviewcard__icon">Overview</div>
-            <div className="overviewcard__info">Card</div>
+            <div className="overviewcard__icon">Assignments</div>
+            <div className="overviewcard__info">5/6</div>
           </div>
           <div id="overviewcard3" className="overviewcard">
-            <div className="overviewcard__icon">Overview</div>
-            <div className="overviewcard__info">Card</div>
+            <div className="overviewcard__icon">Attendance</div>
+            <div className="overviewcard__info">80%</div>
           </div>
           <div id="overviewcard4" className="overviewcard">
-            <div className="overviewcard__icon">Overview</div>
-            <div className="overviewcard__info">Card</div>
+            <div className="overviewcard__icon">Classrooms enrolled</div>
+            <div className="overviewcard__info">7</div>
           </div>
         </div>
         <div className="main-cards">

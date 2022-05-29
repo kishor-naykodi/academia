@@ -49,7 +49,7 @@ export default function Poeple() {
             <thead>
               <tr className="info-head">
                 <td className="info__title">Teachers</td>
-                {_class.teachers.includes(getCurrentUser()._id) && (
+                {_class.author._id === getCurrentUser()._id && (
                   <td className="add-people__icon">
                     <MdPersonAddAlt onClick={handleAddTeacher} />
                   </td>
@@ -79,7 +79,7 @@ export default function Poeple() {
             <thead>
               <tr className="info-head">
                 <td className="info__title">Students</td>
-                {_class.teachers.includes(getCurrentUser()._id) && (
+                {_class.author._id === getCurrentUser()._id && (
                   <td className="add-people__icon">
                     <MdPersonAddAlt onClick={handleAddStudent} />
                   </td>
