@@ -230,11 +230,13 @@ function Question(params) {
       </div>
         {/* ======================Question container with one ans========= */}
       <div className="questions_container_background">
-        {questions.value.length>=1?<><Button onClick={handleOpen}>Ask The Question</Button><Question/></>:<div className="question_blank_msg">
+        {questions.value.length>=1?<><Button onClick={handleOpen}>Ask The Question</Button><Question/></>:<>
+        <div>{questions.classroom_id && questions.value.length==0? <><Button onClick={handleOpen}>Add first question</Button><Question/></>:<></>}</div>
+          <div className="question_blank_msg">
           Possible reasons for not showing questions :<br/>
           Looks Like You didn't selected classroom Or seems It does't have any questions.<br/>
           Or you are not enrolled in any classroom yet.<br/> For checking you are enrolled in classroom or not,<br/>
-           Check top-left classroom tab.</div>}
+           Check top-left classroom tab.</div></>}
        
            <Modal
             open={open}
@@ -266,6 +268,7 @@ function Question(params) {
             
             </Box>
           </Modal>
+          
         
       </div>
     </>

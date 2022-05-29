@@ -40,7 +40,7 @@ function QuestionWithAns(params) {
     p: 4,
    
   };
-   
+ 
   
   useEffect(()=>{
     async function fetchQuestion_with_answer(){
@@ -59,6 +59,21 @@ function QuestionWithAns(params) {
     fetchQuestion_with_answer();
 
    },[id,dispatch])
+
+
+   async function fetchQuestion_with_answer_outsideof_useEffect_after_submitting_answer(){
+    const question_with_Answer= await axios.get(`http://localhost:3001/api/discussion/retrieve_question/${id}`);
+    const question_with_Answer_data=question_with_Answer.data
+    const finalize_object={
+      qid:id,
+      question:question_with_Answer_data.question,
+      answers:question_with_Answer_data.answers,
+    }
+   
+    dispatch(actions.setQuestionWithAnswer(finalize_object));
+
+  } 
+
 
 function Tags(){
   if(questionWithAns.question.tags){
@@ -123,7 +138,8 @@ async function SubmitAnswer() {
       // setMsg("Answer Submitted successfully");
       alert(`Answer Submitted successfully`);
       handleClose()
-      navigate(`/question`)
+      setSubmitAnswer("")
+      fetchQuestion_with_answer_outsideof_useEffect_after_submitting_answer()
   }
    
  } catch (error) {
@@ -170,6 +186,7 @@ async function SubmitAnswer() {
           
           </div>
           <div className="divider"></div>
+          <div>{questionWithAns.qid && questionWithAns.answer.length==0? <div>Be the first to write the answer"</div>:<></>}</div>
           <Button onClick={handleOpen}>Submit Your Answer</Button>
           <div className="answer_container_background">
             <Answer/>
