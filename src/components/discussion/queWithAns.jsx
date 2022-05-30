@@ -8,7 +8,6 @@ import actions from "../../features/actions";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
-import { useNavigate } from "react-router-dom";
 
 function QuestionWithAns(params) {
   const [open, setOpen] = useState(false);
@@ -16,8 +15,6 @@ function QuestionWithAns(params) {
   const handleClose = () => setOpen(false);
   const dispatch = useDispatch();
   const [submitAnswer, setSubmitAnswer] = useState("");
-  // const [msg, setMsg] = useState(null);
-  const navigate = useNavigate();
 
   const questionWithAns = useSelector((states) => states.questionWithAnswer);
   const user = useSelector((states) => states.user);
@@ -52,6 +49,20 @@ function QuestionWithAns(params) {
 
     fetchQuestion_with_answer();
   }, [id, dispatch]);
+
+  async function fetchQuestion_with_answer_outsideof_useEffect_after_submitting_answer() {
+    const question_with_Answer = await axios.get(
+      `http://localhost:3001/api/discussion/retrieve_question/${id}`
+    );
+    const question_with_Answer_data = question_with_Answer.data;
+    const finalize_object = {
+      qid: id,
+      question: question_with_Answer_data.question,
+      answers: question_with_Answer_data.answers,
+    };
+
+    dispatch(actions.setQuestionWithAnswer(finalize_object));
+  }
 
   function Tags() {
     if (questionWithAns.question.tags) {
@@ -92,7 +103,7 @@ function QuestionWithAns(params) {
   async function SubmitAnswer() {
     try {
       if (questionWithAns.qid) {
-        await axios.post(
+        const results = await axios.post(
           `http://localhost:3001/api/discussion/answer/${questionWithAns.qid}`,
           {
             answer: `${submitAnswer}`,
@@ -104,7 +115,8 @@ function QuestionWithAns(params) {
         // setMsg("Answer Submitted successfully");
         alert(`Answer Submitted successfully`);
         handleClose();
-        navigate(`/question`);
+        setSubmitAnswer("");
+        fetchQuestion_with_answer_outsideof_useEffect_after_submitting_answer();
       }
     } catch (error) {
       console.log(error);
@@ -146,6 +158,13 @@ function QuestionWithAns(params) {
             <Tags />
           </div>
           <div className="divider"></div>
+          <div>
+            {questionWithAns.qid && questionWithAns.answer.length === 0 ? (
+              <div>Be the first to write the answer"</div>
+            ) : (
+              <></>
+            )}
+          </div>
           <Button onClick={handleOpen}>Submit Your Answer</Button>
           <div className="answer_container_background">
             <Answer />
