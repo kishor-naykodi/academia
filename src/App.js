@@ -20,11 +20,12 @@ import Stream from "./components/dashboard/classroom/class_manage/stream";
 import People from "./components/dashboard/classroom/class_manage/people";
 import Marks from "./components/dashboard/classroom/class_manage/marks";
 import Schedule from "./components/dashboard/schedule/sch_home";
+import AboutUs from "./components/home/aboutUs";
+import Resource from "./components/dashboard/resources/resource";
+import SubmitWork from "./components/dashboard/classroom/class_manage/submitWork";
 
 //css file imports
 import "./css/normalize.css";
-import Resource from "./components/dashboard/resources/resource";
-import SubmitWork from "./components/dashboard/classroom/class_manage/submitWork";
 class App extends React.Component {
   state = {};
 
@@ -41,6 +42,7 @@ class App extends React.Component {
           <Routes>
             <Route path="/" element={<Home user={user} />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/about_us" element={<AboutUs />} />
             <Route path="/classroom" element={<Classroom />} />
             <Route path="/question" element={<Forum />} />
             <Route path="/popularquestion" element={<Forum />} />

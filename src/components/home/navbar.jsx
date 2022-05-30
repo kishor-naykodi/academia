@@ -30,11 +30,11 @@ class Navbar extends Component {
               <NavLink to="/dashboard">Dashboard</NavLink>
             </li>
           )}
+          {/* <li className="nav__item">
+            <NavLink to="/teachers">Teachers</NavLink>
+          </li> */}
           <li className="nav__item">
-            <NavLink to="#">Teachers</NavLink>
-          </li>
-          <li className="nav__item">
-            <NavLink to="#">About Us</NavLink>
+            <NavLink to="/about_us">About Us</NavLink>
           </li>
           {!this.props.user && (
             <li className="nav__item">

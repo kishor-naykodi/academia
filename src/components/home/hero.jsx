@@ -16,7 +16,10 @@ class Hero extends React.Component {
               className="hero__input"
               placeholder="Email Address"
             />
-            <Link to="#" className="hero__btn btn btn--accent btn--stretched">
+            <Link
+              to="/login"
+              className="hero__btn btn btn--accent btn--stretched"
+            >
               Get Started
             </Link>
           </header>

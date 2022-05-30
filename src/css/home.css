@@ -628,6 +628,10 @@ a {
   right: -32px;
 }
 
+.mb1 {
+  margin-bottom: 5rem;
+}
+
 @media screen and (min-width: 768px) {
   .testimonial__image {
     margin: 0;
@@ -724,6 +728,7 @@ a {
   margin: 0 auto;
   border-radius: 1rem;
   background: var(--color-secondary);
+  margin-bottom: 7rem;
 }
 
 .block__header {

@@ -65,10 +65,10 @@ export default function SubmitWork() {
               </span>
             </div>
             <div className="hr-ruler skin-blue" />
-            <h1 style={{ color: "black" }}>Image</h1>
-            <div className="hr-ruler skin-blue" />
+            {/* <h1 style={{ color: "black" }}>Image</h1> */}
+            {/* <div className="hr-ruler skin-blue" />
             <div className="rec5Nb">class comments</div>
-            <div className="rec5Nb">Add a class comment</div>
+            <div className="rec5Nb">Add a class comment</div> */}
           </div>
           <aside className="BiaLW">
             <div className="GWZ7yf">

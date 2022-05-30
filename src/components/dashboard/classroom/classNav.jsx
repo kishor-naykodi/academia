@@ -3,7 +3,7 @@ import { MdOutlineAdd, MdMenu } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { toggleSidenav } from "../../common/utilFunc";
 import Account from "../../common/account";
-import auth from "../../../services/authService";
+import auth, { getCurrentUser } from "../../../services/authService";
 
 export default function ClassNav(props) {
   const [showOptions, setShowOptions] = useState(false);
@@ -47,18 +47,20 @@ export default function ClassNav(props) {
                   Stream
                 </Link>
               </div>
-              <div className="navigate-wrapper">
-                <Link
-                  className="navigate EZrbnd 2"
-                  onClick={handleActive}
-                  to={{
-                    pathname: `/classroom/work/${props.code}`,
-                  }}
-                  state={{ classroom: props }}
-                >
-                  Classwork
-                </Link>
-              </div>
+              {props.teachers.includes(getCurrentUser()._id) && (
+                <div className="navigate-wrapper">
+                  <Link
+                    className="navigate EZrbnd 2"
+                    onClick={handleActive}
+                    to={{
+                      pathname: `/classroom/work/${props.code}`,
+                    }}
+                    state={{ classroom: props }}
+                  >
+                    Classwork
+                  </Link>
+                </div>
+              )}
               <div className="navigate-wrapper">
                 <Link
                   className="navigate EZrbnd 3"
@@ -71,18 +73,20 @@ export default function ClassNav(props) {
                   People
                 </Link>
               </div>
-              <div className="navigate-wrapper">
-                <Link
-                  className="navigate EZrbnd 4"
-                  onClick={handleActive}
-                  to={{
-                    pathname: `/classroom/marks/${props.code}`,
-                  }}
-                  state={{ classroom: props }}
-                >
-                  Marks
-                </Link>
-              </div>
+              {props.teachers.includes(getCurrentUser()._id) && (
+                <div className="navigate-wrapper">
+                  <Link
+                    className="navigate EZrbnd 4"
+                    onClick={handleActive}
+                    to={{
+                      pathname: `/classroom/marks/${props.code}`,
+                    }}
+                    state={{ classroom: props }}
+                  >
+                    Marks
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         )}

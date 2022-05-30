@@ -98,3 +98,7 @@ export function createWork(assignment) {
 export function getAssignments(id) {
   return http.get(`${apiEndPoint}/assignment/${id}`);
 }
+
+export function getSubmissions(id) {
+  return http.get(`${apiEndPoint}/submissions/${id}`);
+}

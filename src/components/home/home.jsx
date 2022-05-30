@@ -1,6 +1,4 @@
 import React from "react";
-import Courses from "./courses";
-import Domain from "./domain";
 import Features from "./features";
 import Hero from "./hero";
 import Testimonials from "./testimonials";
@@ -23,10 +21,8 @@ class Home extends React.Component {
           </header>
           <Hero />
         </main>
-        <Domain />
-        <Courses />
-        <Features />
         <Testimonials />
+        <Features />
         <footer>
           <Footer />
         </footer>

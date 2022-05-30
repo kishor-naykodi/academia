@@ -7,7 +7,6 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 export default function Stream() {
   const [assignments, setAssignments] = useState();
-  const [file, setFile] = useState();
   const _class = useLocation().state.classroom;
 
   useEffect(() => {
@@ -19,10 +18,6 @@ export default function Stream() {
     fetchData();
   }, [_class._id]);
 
-  const saveFile = (e) => {
-    setFile(e.target.files[0]);
-  };
-  console.log(assignments);
   return (
     <React.Fragment>
       <ClassNav {..._class} />
